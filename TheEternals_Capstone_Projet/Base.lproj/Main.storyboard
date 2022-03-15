@@ -67,15 +67,99 @@
                                     </datePicker>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJp-1W-pjd">
+                                <rect key="frame" x="16" y="368" width="382" height="216"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="End date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUQ-Pt-ANB">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="216"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JAL-gb-Jmv">
+                                        <rect key="frame" x="62" y="0.0" width="320" height="216"/>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-5W-u0D">
+                                <rect key="frame" x="16" y="614" width="382" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbQ-d8-ioH">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qU4-kz-hbq">
+                                        <rect key="frame" x="333" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWm-5d-BaD">
+                                <rect key="frame" x="16" y="665" width="382" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcH-OP-I3T">
+                                        <rect key="frame" x="0.0" y="0.0" width="54.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="S"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0J-rf-ZSl">
+                                        <rect key="frame" x="54.5" y="0.0" width="54.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="M"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOZ-ut-z2f">
+                                        <rect key="frame" x="109" y="0.0" width="54.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="T"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoC-CZ-JIa">
+                                        <rect key="frame" x="163.5" y="0.0" width="55" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="W"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpR-S3-sQF">
+                                        <rect key="frame" x="218.5" y="0.0" width="54.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="T"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX2-HJ-i7t">
+                                        <rect key="frame" x="273" y="0.0" width="54.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="F"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h48-aF-h5I">
+                                        <rect key="frame" x="327.5" y="0.0" width="54.5" height="31"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="S"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0uJ-o2-yYJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="CQf-5W-u0D" secondAttribute="trailing" constant="16" id="1hR-h7-jCN"/>
+                            <constraint firstItem="ZJp-1W-pjd" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="5Jr-S3-I2k"/>
+                            <constraint firstItem="CQf-5W-u0D" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="5Wh-PH-AaV"/>
                             <constraint firstItem="8ne-Al-zme" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="KSA-dg-aGj"/>
                             <constraint firstItem="8ne-Al-zme" firstAttribute="top" secondItem="mXq-uN-EHm" secondAttribute="bottom" constant="10" id="Lfl-2A-8DD"/>
+                            <constraint firstItem="fWm-5d-BaD" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="PEM-0E-4id"/>
+                            <constraint firstItem="CQf-5W-u0D" firstAttribute="top" secondItem="ZJp-1W-pjd" secondAttribute="bottom" constant="30" id="QgQ-QO-6HT"/>
                             <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="mXq-uN-EHm" secondAttribute="trailing" constant="16" id="WpT-c6-LMd"/>
                             <constraint firstItem="mXq-uN-EHm" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="XF7-pc-uH2"/>
                             <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="8ne-Al-zme" secondAttribute="trailing" constant="16" id="ZR8-KA-Dsr"/>
+                            <constraint firstItem="fWm-5d-BaD" firstAttribute="top" secondItem="CQf-5W-u0D" secondAttribute="bottom" constant="20" id="Zac-Ji-er0"/>
+                            <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="fWm-5d-BaD" secondAttribute="trailing" constant="16" id="aFF-Al-eTw"/>
+                            <constraint firstItem="ZJp-1W-pjd" firstAttribute="top" secondItem="8ne-Al-zme" secondAttribute="bottom" constant="10" id="aJ2-oF-pP0"/>
+                            <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="ZJp-1W-pjd" secondAttribute="trailing" constant="16" id="exd-mT-tUj"/>
                             <constraint firstItem="mXq-uN-EHm" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="g04-vm-Nfa"/>
                             <constraint firstItem="mXq-uN-EHm" firstAttribute="top" secondItem="0uJ-o2-yYJ" secondAttribute="top" constant="10" id="t5E-35-QAu"/>
                         </constraints>
@@ -87,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPe-Wk-fLi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1431.8840579710145" y="1100.2232142857142"/>
+            <point key="canvasLocation" x="1430.4347826086957" y="1100.2232142857142"/>
         </scene>
         <!--Home-->
         <scene sceneID="Fjh-Pq-Fie">
