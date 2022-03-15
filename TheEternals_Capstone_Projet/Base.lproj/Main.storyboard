@@ -40,6 +40,55 @@
             </objects>
             <point key="canvasLocation" x="383" y="305"/>
         </scene>
+        <!--New Reminder-->
+        <scene sceneID="DoB-Ps-ld0">
+            <objects>
+                <viewController id="xo7-jn-sUT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FYo-g8-0VG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of the Reminder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXq-uN-EHm">
+                                <rect key="frame" x="16" y="98" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ne-Al-zme">
+                                <rect key="frame" x="16" y="142" width="382" height="216"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Start date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vI-FI-akA">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="216"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-P4-HlB">
+                                        <rect key="frame" x="62" y="0.0" width="320" height="216"/>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0uJ-o2-yYJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8ne-Al-zme" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="KSA-dg-aGj"/>
+                            <constraint firstItem="8ne-Al-zme" firstAttribute="top" secondItem="mXq-uN-EHm" secondAttribute="bottom" constant="10" id="Lfl-2A-8DD"/>
+                            <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="mXq-uN-EHm" secondAttribute="trailing" constant="16" id="WpT-c6-LMd"/>
+                            <constraint firstItem="mXq-uN-EHm" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="XF7-pc-uH2"/>
+                            <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="8ne-Al-zme" secondAttribute="trailing" constant="16" id="ZR8-KA-Dsr"/>
+                            <constraint firstItem="mXq-uN-EHm" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="g04-vm-Nfa"/>
+                            <constraint firstItem="mXq-uN-EHm" firstAttribute="top" secondItem="0uJ-o2-yYJ" secondAttribute="top" constant="10" id="t5E-35-QAu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Reminder" id="Llr-5n-quX">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="j66-AR-irA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="EIH-7Q-dpd"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPe-Wk-fLi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1431.8840579710145" y="1100.2232142857142"/>
+        </scene>
         <!--Home-->
         <scene sceneID="Fjh-Pq-Fie">
             <objects>
@@ -183,6 +232,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3s-Ik-r2r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-917" y="-499"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="btf-vK-JrZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G89-PH-WIy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B6S-he-onv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xo7-jn-sUT" kind="relationship" relationship="rootViewController" id="6Wz-8X-vUN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8a-ko-B3j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="521.73913043478262" y="1099.5535714285713"/>
         </scene>
     </scenes>
     <resources>
