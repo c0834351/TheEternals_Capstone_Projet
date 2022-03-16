@@ -242,7 +242,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o6c-Qn-Fqh" userLabel="CardView">
-                                                    <rect key="frame" x="20" y="11" width="342" height="120"/>
+                                                    <rect key="frame" x="5" y="5" width="389" height="120"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OnF-T2-vXD">
                                                             <rect key="frame" x="5" y="5" width="100" height="100"/>
@@ -258,7 +258,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YIF-AI-TIc">
-                                                            <rect key="frame" x="300" y="5" width="51" height="31"/>
+                                                            <rect key="frame" x="335" y="5" width="51" height="31"/>
                                                         </switch>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="After Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5L7-Mb-qZP">
                                                             <rect key="frame" x="110" y="49.5" width="80.5" height="21"/>
@@ -291,9 +291,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="o6c-Qn-Fqh" secondAttribute="bottom" id="10L-1i-qhc"/>
-                                                <constraint firstItem="o6c-Qn-Fqh" firstAttribute="leading" secondItem="Q8v-ZM-aCB" secondAttribute="leadingMargin" id="7cg-qx-6aF"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="o6c-Qn-Fqh" secondAttribute="trailing" id="gah-4d-sS6"/>
+                                                <constraint firstItem="o6c-Qn-Fqh" firstAttribute="leading" secondItem="Q8v-ZM-aCB" secondAttribute="leadingMargin" constant="-15" id="HY1-wk-YVq"/>
                                                 <constraint firstItem="o6c-Qn-Fqh" firstAttribute="top" secondItem="Q8v-ZM-aCB" secondAttribute="topMargin" id="iej-oh-hws"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="o6c-Qn-Fqh" secondAttribute="trailing" constant="-20" id="rTK-cw-bod"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
