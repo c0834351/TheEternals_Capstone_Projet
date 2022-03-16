@@ -43,7 +43,7 @@
         <!--New Reminder-->
         <scene sceneID="DoB-Ps-ld0">
             <objects>
-                <viewController id="xo7-jn-sUT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="add" id="xo7-jn-sUT" customClass="NewReminderViewController" customModule="TheEternals_Capstone_Projet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FYo-g8-0VG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,13 +56,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ne-Al-zme">
                                 <rect key="frame" x="16" y="142" width="382" height="216"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Start date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vI-FI-akA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Start date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vI-FI-akA">
                                         <rect key="frame" x="0.0" y="0.0" width="62" height="216"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-P4-HlB">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yc2-P4-HlB">
                                         <rect key="frame" x="62" y="0.0" width="320" height="216"/>
                                     </datePicker>
                                 </subviews>
@@ -70,13 +70,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJp-1W-pjd">
                                 <rect key="frame" x="16" y="368" width="382" height="216"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="End date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUQ-Pt-ANB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="End date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUQ-Pt-ANB">
                                         <rect key="frame" x="0.0" y="0.0" width="62" height="216"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JAL-gb-Jmv">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JAL-gb-Jmv">
                                         <rect key="frame" x="62" y="0.0" width="320" height="216"/>
                                     </datePicker>
                                 </subviews>
@@ -86,7 +86,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbQ-d8-ioH">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -142,10 +142,25 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBz-fk-tA2">
+                                <rect key="frame" x="16" y="716" width="382" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snooze" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeX-hX-TWS">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dnK-FG-YjL">
+                                        <rect key="frame" x="333" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0uJ-o2-yYJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="mBz-fk-tA2" firstAttribute="top" secondItem="fWm-5d-BaD" secondAttribute="bottom" constant="20" id="0zp-lv-Y9p"/>
                             <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="CQf-5W-u0D" secondAttribute="trailing" constant="16" id="1hR-h7-jCN"/>
                             <constraint firstItem="ZJp-1W-pjd" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="5Jr-S3-I2k"/>
                             <constraint firstItem="CQf-5W-u0D" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="5Wh-PH-AaV"/>
@@ -159,9 +174,11 @@
                             <constraint firstItem="fWm-5d-BaD" firstAttribute="top" secondItem="CQf-5W-u0D" secondAttribute="bottom" constant="20" id="Zac-Ji-er0"/>
                             <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="fWm-5d-BaD" secondAttribute="trailing" constant="16" id="aFF-Al-eTw"/>
                             <constraint firstItem="ZJp-1W-pjd" firstAttribute="top" secondItem="8ne-Al-zme" secondAttribute="bottom" constant="10" id="aJ2-oF-pP0"/>
+                            <constraint firstItem="mBz-fk-tA2" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="eVV-OA-bdh"/>
                             <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="ZJp-1W-pjd" secondAttribute="trailing" constant="16" id="exd-mT-tUj"/>
                             <constraint firstItem="mXq-uN-EHm" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="g04-vm-Nfa"/>
                             <constraint firstItem="mXq-uN-EHm" firstAttribute="top" secondItem="0uJ-o2-yYJ" secondAttribute="top" constant="10" id="t5E-35-QAu"/>
+                            <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="mBz-fk-tA2" secondAttribute="trailing" constant="16" id="vxy-bi-Jlp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Reminder" id="Llr-5n-quX">
