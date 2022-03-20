@@ -12,9 +12,9 @@ class AlarmsViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         searchBar.backgroundImage = UIImage()
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
