@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7778A24227E7964200288A3F /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7778A24127E7964200288A3F /* AlarmsViewController.swift */; };
 		DD2D1C2927E03E7D00357E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2827E03E7D00357E9C /* AppDelegate.swift */; };
 		DD2D1C2B27E03E7D00357E9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2A27E03E7D00357E9C /* SceneDelegate.swift */; };
 		DD2D1C2D27E03E7D00357E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2C27E03E7D00357E9C /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7778A24127E7964200288A3F /* AlarmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
 		DD2D1C2527E03E7D00357E9C /* TheEternals_Capstone_Projet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheEternals_Capstone_Projet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2D1C2827E03E7D00357E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD2D1C2A27E03E7D00357E9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				DD2D1C3127E03E7D00357E9C /* TheEternals_Capstone_Projet.xcdatamodeld */,
 				DD2D1C3F27E18FFD00357E9C /* NewAlarmViewController.swift */,
 				DD2D1C4127E1912A00357E9C /* TodayAlarmCell.swift */,
+				7778A24127E7964200288A3F /* AlarmsViewController.swift */,
 			);
 			path = TheEternals_Capstone_Projet;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				DD2D1C2D27E03E7D00357E9C /* ViewController.swift in Sources */,
 				DD2D1C2927E03E7D00357E9C /* AppDelegate.swift in Sources */,
 				DD2D1C3327E03E7D00357E9C /* TheEternals_Capstone_Projet.xcdatamodeld in Sources */,
+				7778A24227E7964200288A3F /* AlarmsViewController.swift in Sources */,
 				DD2D1C4227E1912A00357E9C /* TodayAlarmCell.swift in Sources */,
 				DD2D1C4027E18FFD00357E9C /* NewAlarmViewController.swift in Sources */,
 				DD2D1C2B27E03E7D00357E9C /* SceneDelegate.swift in Sources */,

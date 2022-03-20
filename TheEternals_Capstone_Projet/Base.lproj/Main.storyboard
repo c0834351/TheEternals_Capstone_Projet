@@ -11,18 +11,55 @@
         <!--Alarms-->
         <scene sceneID="9LC-oF-0Ot">
             <objects>
-                <viewController id="X2z-Zl-Jsa" sceneMemberID="viewController">
+                <viewController id="X2z-Zl-Jsa" customClass="AlarmsViewController" customModule="TheEternals_Capstone_Projet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wen-Xz-HKt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Alarms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tj2-QX-1El">
+                                <rect key="frame" x="16" y="74" width="119" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="7mP-4V-FDM">
+                                <rect key="frame" x="10" y="114" width="394" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7tc-6v-KAS">
+                                <rect key="frame" x="16" y="180" width="382" height="621"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="HAu-jQ-UWn">
+                                        <rect key="frame" x="0.0" y="44.5" width="382" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HAu-jQ-UWn" id="Nw6-H5-muA">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LWp-XV-RRJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7tc-6v-KAS" firstAttribute="leading" secondItem="LWp-XV-RRJ" secondAttribute="leading" constant="16" id="ETu-m2-juD"/>
+                            <constraint firstItem="7tc-6v-KAS" firstAttribute="top" secondItem="7mP-4V-FDM" secondAttribute="bottom" constant="15" id="Um8-XP-XcB"/>
+                            <constraint firstItem="tj2-QX-1El" firstAttribute="leading" secondItem="LWp-XV-RRJ" secondAttribute="leading" constant="16" id="Z8n-7q-e2z"/>
+                            <constraint firstItem="LWp-XV-RRJ" firstAttribute="trailing" secondItem="7mP-4V-FDM" secondAttribute="trailing" constant="10" id="dxL-LA-d9g"/>
+                            <constraint firstItem="7mP-4V-FDM" firstAttribute="top" secondItem="tj2-QX-1El" secondAttribute="bottom" constant="10" id="o42-8o-6Tj"/>
+                            <constraint firstItem="tj2-QX-1El" firstAttribute="top" secondItem="LWp-XV-RRJ" secondAttribute="top" constant="30" id="oVh-Ow-K5g"/>
+                            <constraint firstItem="LWp-XV-RRJ" firstAttribute="trailing" secondItem="7tc-6v-KAS" secondAttribute="trailing" constant="16" id="qR7-g8-EAQ"/>
+                            <constraint firstItem="LWp-XV-RRJ" firstAttribute="bottom" secondItem="7tc-6v-KAS" secondAttribute="bottom" constant="12" id="wOn-tn-8l9"/>
+                            <constraint firstItem="7mP-4V-FDM" firstAttribute="leading" secondItem="LWp-XV-RRJ" secondAttribute="leading" constant="10" id="zLI-Uf-OFC"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Alarms" image="alarm" catalog="system" selectedImage="alarm" id="nlf-OT-0NZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rN-Gx-fBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1333" y="305"/>
+            <point key="canvasLocation" x="-1333.3333333333335" y="304.6875"/>
         </scene>
         <!--Help-->
         <scene sceneID="0vV-jQ-UNx">
