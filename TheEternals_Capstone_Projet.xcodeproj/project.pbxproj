@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DAD856C27E7E4C40009E46F /* NewAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD856B27E7E4C40009E46F /* NewAlarmViewController.swift */; };
 		7778A24227E7964200288A3F /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7778A24127E7964200288A3F /* AlarmsViewController.swift */; };
 		DD2D1C2927E03E7D00357E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2827E03E7D00357E9C /* AppDelegate.swift */; };
 		DD2D1C2B27E03E7D00357E9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2A27E03E7D00357E9C /* SceneDelegate.swift */; };
@@ -15,11 +16,11 @@
 		DD2D1C3327E03E7D00357E9C /* TheEternals_Capstone_Projet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C3127E03E7D00357E9C /* TheEternals_Capstone_Projet.xcdatamodeld */; };
 		DD2D1C3527E03E7F00357E9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD2D1C3427E03E7F00357E9C /* Assets.xcassets */; };
 		DD2D1C3827E03E7F00357E9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2D1C3627E03E7F00357E9C /* LaunchScreen.storyboard */; };
-		DD2D1C4027E18FFD00357E9C /* NewAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C3F27E18FFD00357E9C /* NewAlarmViewController.swift */; };
 		DD2D1C4227E1912A00357E9C /* TodayAlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C4127E1912A00357E9C /* TodayAlarmCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DAD856B27E7E4C40009E46F /* NewAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmViewController.swift; sourceTree = "<group>"; };
 		7778A24127E7964200288A3F /* AlarmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
 		DD2D1C2527E03E7D00357E9C /* TheEternals_Capstone_Projet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheEternals_Capstone_Projet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2D1C2827E03E7D00357E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		DD2D1C3427E03E7F00357E9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD2D1C3727E03E7F00357E9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD2D1C3927E03E7F00357E9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD2D1C3F27E18FFD00357E9C /* NewAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmViewController.swift; sourceTree = "<group>"; };
 		DD2D1C4127E1912A00357E9C /* TodayAlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAlarmCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,9 +72,9 @@
 				DD2D1C3627E03E7F00357E9C /* LaunchScreen.storyboard */,
 				DD2D1C3927E03E7F00357E9C /* Info.plist */,
 				DD2D1C3127E03E7D00357E9C /* TheEternals_Capstone_Projet.xcdatamodeld */,
-				DD2D1C3F27E18FFD00357E9C /* NewAlarmViewController.swift */,
 				DD2D1C4127E1912A00357E9C /* TodayAlarmCell.swift */,
 				7778A24127E7964200288A3F /* AlarmsViewController.swift */,
+				3DAD856B27E7E4C40009E46F /* NewAlarmViewController.swift */,
 			);
 			path = TheEternals_Capstone_Projet;
 			sourceTree = "<group>";
@@ -152,10 +152,10 @@
 			files = (
 				DD2D1C2D27E03E7D00357E9C /* ViewController.swift in Sources */,
 				DD2D1C2927E03E7D00357E9C /* AppDelegate.swift in Sources */,
+				3DAD856C27E7E4C40009E46F /* NewAlarmViewController.swift in Sources */,
 				DD2D1C3327E03E7D00357E9C /* TheEternals_Capstone_Projet.xcdatamodeld in Sources */,
 				7778A24227E7964200288A3F /* AlarmsViewController.swift in Sources */,
 				DD2D1C4227E1912A00357E9C /* TodayAlarmCell.swift in Sources */,
-				DD2D1C4027E18FFD00357E9C /* NewAlarmViewController.swift in Sources */,
 				DD2D1C2B27E03E7D00357E9C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
