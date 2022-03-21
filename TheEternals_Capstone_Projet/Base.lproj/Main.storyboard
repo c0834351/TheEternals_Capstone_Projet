@@ -318,6 +318,9 @@
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="recordBtnClicked:" destination="xo7-jn-sUT" eventType="touchUpInside" id="VTk-mL-HhY"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFM-ln-JWa">
                                                 <rect key="frame" x="186.5" y="0.0" width="171.5" height="31"/>
@@ -328,6 +331,9 @@
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="playBtnClicked:" destination="xo7-jn-sUT" eventType="touchUpInside" id="fmH-Vh-pne"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -340,6 +346,9 @@
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="setDefaultToneClicked:" destination="xo7-jn-sUT" eventType="touchUpInside" id="Tfr-N2-QmS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -360,6 +369,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CG-0r-hGA">
                                         <rect key="frame" x="311.5" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="repeatFlagIsON:" destination="xo7-jn-sUT" eventType="valueChanged" id="wyk-dg-xcl"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -384,6 +396,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.down.circle" catalog="system">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapShowAudioOptions:" destination="xo7-jn-sUT" eventType="touchUpInside" id="6lU-ch-QhO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -408,6 +423,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.down.circle" catalog="system">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapShowPicturesOptions:" destination="xo7-jn-sUT" eventType="touchUpInside" id="C0i-0t-wjg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -423,6 +441,10 @@
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cameraBtnClicked:" destination="xo7-jn-sUT" eventType="touchUpInside" id="OVR-w7-hkS"/>
+                                            <action selector="galleryBtnClicked:" destination="xo7-jn-sUT" eventType="touchUpInside" id="ksZ-71-Yp7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-q0-bxc">
                                         <rect key="frame" x="186.5" y="0.0" width="171.5" height="31"/>
@@ -507,9 +529,15 @@
                     <navigationItem key="navigationItem" title="New Reminder" id="Llr-5n-quX">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="j66-AR-irA">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapCancel:" destination="xo7-jn-sUT" id="lME-4G-qtd"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="EIH-7Q-dpd">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapSave:" destination="xo7-jn-sUT" id="IUb-ip-N9b"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

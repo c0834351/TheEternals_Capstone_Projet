@@ -63,9 +63,53 @@ class NewAlarmViewController: UIViewController {
         
     }
     
-    @IBAction func snoozeSwitchTapped(_ sender: Any) {
+    
+    @IBAction func repeatFlagIsON(_ sender: UISwitch) {
     }
     
     
-
+    @IBAction func snoozeSwitchTapped(_ sender: UISwitch) {
+    }
+    
+    
+    
+    @IBAction func recordBtnClicked(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func playBtnClicked(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func setDefaultToneClicked(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func cameraBtnClicked(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func galleryBtnClicked(_ sender: Any) {
+    }
+    
+    
+    
+    @IBAction func didTapSave() {
+    }
+    
+    
+    @IBAction func didTapCancel() {
+    }
+    
+    
+    @IBAction func didTapShowAudioOptions(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func didTapShowPicturesOptions(_ sender: Any) {
+    }
+    
+    
+    
+    
 }
