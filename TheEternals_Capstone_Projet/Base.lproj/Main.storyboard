@@ -465,24 +465,24 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EP9-mQ-JeA">
-                                <rect key="frame" x="16" y="687" width="350" height="110"/>
+                                <rect key="frame" x="16" y="687" width="350" height="165"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2e2-K0-8fs">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="165"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="9z5-Fy-6S5"/>
                                             <constraint firstAttribute="width" constant="110" id="QNs-rp-URO"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qaZ-JR-Iyb">
-                                        <rect key="frame" x="120" y="0.0" width="110" height="110"/>
+                                        <rect key="frame" x="120" y="0.0" width="110" height="165"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="26B-gD-5yg"/>
                                             <constraint firstAttribute="height" constant="110" id="RHX-GA-RmP"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G79-xP-PQV">
-                                        <rect key="frame" x="240" y="0.0" width="110" height="110"/>
+                                        <rect key="frame" x="240" y="0.0" width="110" height="165"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="41Q-Lt-brE"/>
                                             <constraint firstAttribute="width" constant="110" id="Gmr-Vu-G8C"/>
@@ -535,13 +535,13 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="j66-AR-irA">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="didTapCancel:" destination="xo7-jn-sUT" id="lME-4G-qtd"/>
+                                <action selector="didTapCancel" destination="xo7-jn-sUT" id="cgT-xQ-wxT"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="EIH-7Q-dpd">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="didTapSave:" destination="xo7-jn-sUT" id="IUb-ip-N9b"/>
+                                <action selector="didTapSave" destination="xo7-jn-sUT" id="LPt-bA-tFZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
