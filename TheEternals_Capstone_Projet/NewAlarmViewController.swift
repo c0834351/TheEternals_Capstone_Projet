@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import CoreData
+import AVFoundation
 
-class NewAlarmViewController: UIViewController {
+class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDelegate  {
     
     //StackViews
     @IBOutlet weak var datesVStackview: UIStackView!
@@ -52,6 +54,9 @@ class NewAlarmViewController: UIViewController {
     @IBOutlet weak var startDate: UIDatePicker!
     @IBOutlet weak var endDate: UIDatePicker!
     
+    private var recordingSession: AVAudioSession!
+    private var recorder: AVAudioRecorder!
+    private var player =  AVAudioPlayer()
     private var newAlarm: Alarm!
     private var audioFileName = ""
 
@@ -81,6 +86,30 @@ class NewAlarmViewController: UIViewController {
     
     
     @IBAction func recordBtnClicked(_ sender: UIButton) {
+        if (recordBtnLB.titleLabel?.text == "Record"){
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        self.startRec()
+                    } else {
+                        showAlert(message: "Microphone permission denied")
+                    }
+                }
+            }
+        } catch {
+            showAlert(message: "Recording failed")
+        }
+        }
+        else {
+            print("recorder is nil")
+            recorder?.stop()
+            recorder = nil
+            recordBtnLB.setTitle("Record", for: .normal)
+            recordBtnLB.setImage(UIImage(systemName: "mic.fill"), for: .normal)
+        }
     }
     
     
@@ -124,6 +153,7 @@ class NewAlarmViewController: UIViewController {
     
     
     @IBAction func didTapCancel() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -132,6 +162,37 @@ class NewAlarmViewController: UIViewController {
     
     
     @IBAction func didTapShowPicturesOptions(_ sender: Any) {
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    private func getRecordingURL(_ fileName : String) -> URL {
+        return getDocumentsDirectory().appendingPathComponent(fileName)
+    }
+    
+    private func startRec() {
+        audioFileName = "recording" + UUID().uuidString + ".m4a"
+        let audioURL = getRecordingURL(audioFileName)
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+        do {
+            recorder = try AVAudioRecorder(url: audioURL, settings: settings)
+            recorder.delegate = self
+            recorder.record()
+            recordBtnLB.setImage(UIImage(systemName: "mic.slash.fill"), for: .normal)
+            recordBtnLB.setTitle("Stop", for: .normal)
+            print("start recording")
+        } catch {
+            print("Error in recording \(error.localizedDescription)")
+        }
     }
     
     private func saveData () {
@@ -151,3 +212,6 @@ class NewAlarmViewController: UIViewController {
     
     
 }
+
+    
+
