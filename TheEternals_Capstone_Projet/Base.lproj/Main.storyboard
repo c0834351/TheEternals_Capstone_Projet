@@ -297,6 +297,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y26-9W-lLX">
                                         <rect key="frame" x="309" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="snoozeSwitchTapped:" destination="xo7-jn-sUT" eventType="valueChanged" id="1ZA-t3-9I6"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -524,9 +527,14 @@
                         <outlet property="mondayButton" destination="ww7-eT-bXS" id="w1s-FR-a3q"/>
                         <outlet property="picturesHSHeightConstraint" destination="3s0-85-N6o" id="U8Q-Dt-Hei"/>
                         <outlet property="picturesHStackView" destination="h0M-gX-iX3" id="sN9-nB-d3L"/>
+                        <outlet property="playBtnLB" destination="NFM-ln-JWa" id="zey-2L-SyY"/>
+                        <outlet property="recordBtnLB" destination="5uw-YZ-Us6" id="JPX-qQ-80p"/>
                         <outlet property="repeatFlag" destination="4CG-0r-hGA" id="wo6-JY-Aym"/>
                         <outlet property="repeatStackView" destination="aTH-3u-dFM" id="838-aJ-ZNk"/>
                         <outlet property="saturdayButton" destination="ewL-ca-5WI" id="03C-Yz-gkC"/>
+                        <outlet property="setDefaultToneBtnLB" destination="0Wl-co-Y1G" id="HYT-yZ-CdE"/>
+                        <outlet property="showAudioOptionsBTN" destination="5Hy-us-lBd" id="9ng-QI-ruL"/>
+                        <outlet property="showPicturesOptionsBTN" destination="0Zo-f7-2FQ" id="W7C-Fq-KJG"/>
                         <outlet property="snoozeSwitch" destination="Y26-9W-lLX" id="q9P-9g-NGH"/>
                         <outlet property="startDate" destination="T6A-U2-Dg4" id="RCK-z5-WPo"/>
                         <outlet property="sundayButton" destination="WHH-j8-Nee" id="Mtr-VB-vDD"/>
