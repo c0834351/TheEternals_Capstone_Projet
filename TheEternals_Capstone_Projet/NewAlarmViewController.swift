@@ -8,7 +8,19 @@
 import UIKit
 
 class NewAlarmViewController: UIViewController {
-
+    
+    @IBOutlet weak var datesVStackview: UIStackView!
+    
+    @IBOutlet weak var weekdaysStackView: UIStackView!
+    
+    @IBOutlet weak var alarmToneVStackView: UIStackView!
+    
+    @IBOutlet weak var picturesHStackView: UIStackView!
+    
+    @IBOutlet weak var repeatStackView: UIStackView!
+    @IBOutlet weak var weekdaysSVConstraint: NSLayoutConstraint!
+    @IBOutlet weak var alarmToneVSHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var picturesHSHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var alarmTitle: UITextField!
     
     @IBOutlet weak var image1: UIImageView!
