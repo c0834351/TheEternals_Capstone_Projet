@@ -510,16 +510,28 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="TuesdayButton" destination="mlL-np-acK" id="bad-z8-9H0"/>
+                        <outlet property="alarmTime" destination="kIE-rU-8xX" id="E3t-QR-b34"/>
                         <outlet property="alarmTitle" destination="mXq-uN-EHm" id="s8F-T5-CGc"/>
                         <outlet property="alarmToneVSHeightConstraint" destination="Zay-8D-GQO" id="exT-g9-Efd"/>
                         <outlet property="alarmToneVStackView" destination="Yhr-6e-PTc" id="Eyf-7k-tNo"/>
                         <outlet property="datesVStackview" destination="95w-6t-4ai" id="bfj-xr-WEP"/>
+                        <outlet property="endDate" destination="5DC-jC-fHg" id="E7H-ZX-hkX"/>
+                        <outlet property="fridayButton" destination="mpO-oY-Lax" id="eNx-RG-hgu"/>
                         <outlet property="image1" destination="2e2-K0-8fs" id="hm4-VU-Uh2"/>
                         <outlet property="image2" destination="qaZ-JR-Iyb" id="Nyh-wD-jRl"/>
                         <outlet property="image3" destination="G79-xP-PQV" id="2As-Dl-SEo"/>
+                        <outlet property="mondayButton" destination="ww7-eT-bXS" id="w1s-FR-a3q"/>
                         <outlet property="picturesHSHeightConstraint" destination="3s0-85-N6o" id="U8Q-Dt-Hei"/>
                         <outlet property="picturesHStackView" destination="h0M-gX-iX3" id="sN9-nB-d3L"/>
+                        <outlet property="repeatFlag" destination="4CG-0r-hGA" id="wo6-JY-Aym"/>
                         <outlet property="repeatStackView" destination="aTH-3u-dFM" id="838-aJ-ZNk"/>
+                        <outlet property="saturdayButton" destination="ewL-ca-5WI" id="03C-Yz-gkC"/>
+                        <outlet property="snoozeSwitch" destination="Y26-9W-lLX" id="q9P-9g-NGH"/>
+                        <outlet property="startDate" destination="T6A-U2-Dg4" id="RCK-z5-WPo"/>
+                        <outlet property="sundayButton" destination="WHH-j8-Nee" id="Mtr-VB-vDD"/>
+                        <outlet property="thursdayButton" destination="SeK-mb-Su1" id="WLL-Lg-5fU"/>
+                        <outlet property="wednesdayButton" destination="ZuY-ns-lRT" id="a0k-D2-8Gd"/>
                         <outlet property="weekdaysSVConstraint" destination="j4Y-tr-vss" id="sVE-eN-kFt"/>
                         <outlet property="weekdaysStackView" destination="rDc-g0-ad2" id="zrH-Gh-bZm"/>
                     </connections>
