@@ -26,6 +26,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     //TextFields
     @IBOutlet weak var alarmTitle: UITextField!
     
+    
     //ImageViews
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var image2: UIImageView!
@@ -131,13 +132,13 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     
     
     @IBAction func didTapSave() {
-        guard let name = alarmTitle.text, !name.isEmpty else{
+        guard let name = alarmTitle.text else{
             showAlert(message: "Title for Alarm is required")
             return
         }
         let timeformat = DateFormatter()
         timeformat.dateFormat = "hh:mm a"
-        newAlarm.title = alarmTitle.text
+        newAlarm.title = name
         newAlarm.startdate = startDate.date
         newAlarm.enddate = endDate.date
         newAlarm.taken = false

@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class AlarmsViewController: UIViewController {
+class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -30,6 +30,11 @@ class AlarmsViewController: UIViewController {
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(allalarms.count == 0){
+            self.allAlarmsTV.setEmptyMessage("No alarms created")
+        } else {
+            allAlarmsTV.restore()
+        }
         return allalarms.count
     }
     
@@ -53,4 +58,25 @@ class AlarmsViewController: UIViewController {
         }
     }
 
+}
+
+extension UITableView {
+
+    func setEmptyMessage(_ message: String) {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        messageLabel.text = message
+        messageLabel.textColor = .black
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
+        messageLabel.sizeToFit()
+
+        self.backgroundView = messageLabel
+        self.separatorStyle = .none
+    }
+
+    func restore() {
+        self.backgroundView = nil
+        self.separatorStyle = .singleLine
+    }
 }
