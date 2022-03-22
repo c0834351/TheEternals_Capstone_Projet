@@ -55,6 +55,10 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     @IBOutlet weak var startDate: UIDatePicker!
     @IBOutlet weak var endDate: UIDatePicker!
     
+    var imagePicker = UIImagePickerController()
+    var defaultWeekdaysSVheight = 0.0
+    var defaultAudioOptionsSVheight = 0.0
+    var defaultPicturesOptionsSVheight = 0.0
     private var recordingSession: AVAudioSession!
     private var recorder: AVAudioRecorder!
     private var player =  AVAudioPlayer()
@@ -74,10 +78,40 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         gradientLayer.colors = [UIColor.systemBlue.cgColor, UIColor.systemGray3.cgColor]
         view.layer.insertSublayer(gradientLayer, at: 0)
         
+        newAlarm = Alarm(context: self.context)
+        startDate.minimumDate = Date()
+        endDate.minimumDate = Date()
+        defaultWeekdaysSVheight = weekdaysSVConstraint.constant
+        weekdaysSVConstraint.constant = 0.0
+        datesVStackview.layer.cornerRadius = 8
+        
     }
     
     
     @IBAction func repeatFlagIsON(_ sender: UISwitch) {
+        if (repeatFlag.isOn){
+            let bIsHidden = weekdaysStackView.isHidden
+
+            if bIsHidden {
+                weekdaysStackView.isHidden = false
+            }
+
+            UIView.animate(withDuration: 0.3, animations: {
+                self.weekdaysSVConstraint.constant = self.weekdaysSVConstraint.constant > 0 ? 0 : self.defaultWeekdaysSVheight
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            let bIsHidden = weekdaysStackView.isHidden
+            
+            if !bIsHidden {
+                weekdaysStackView.isHidden = true
+            }
+
+            UIView.animate(withDuration: 0.3, animations: {
+                self.weekdaysSVConstraint.constant = 0.0
+                self.view.layoutIfNeeded()
+            })
+        }
     }
     
     
