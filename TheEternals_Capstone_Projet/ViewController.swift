@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource  {
     
@@ -17,12 +18,10 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     
     @IBOutlet weak var todayAlarmsTV: UITableView!
     private var upcomingalarms = [Alarm]()
+    private var allalarms = [Alarm]()
+    private var todayDate = Date()
     
-    let pictures: [UIImage] = [UIImage(named: "dolo.jpg")!,UIImage(named: "hcq.jpg")!]
-    let time: [String] = ["17:00", "18:00"]
-    let afterFood: [String] = ["After Food", "Before Food"]
-    let medicines: [String] = ["Dolo 650", "HCQ - 200"]
-    let enabled: [Bool] = [true, false]
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     private let floatingAddButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -38,7 +37,6 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         button.layer.cornerRadius = 25
         return button
     }()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +65,21 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             self.dateLabel.text = currdate
             self.ampmLabel.text = am
             }
+            
         }
         floatingAddButton.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
         
-        
+        getUpcomingAlarms()
+        NotificationCenter.default.addObserver(self, selector: #selector(alarmCreated), name: Notification.Name("alarm created"), object: nil)
+    }
+    
+    @objc func alarmCreated() {
+        todayAlarmsTV.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        todayAlarmsTV.reloadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -82,12 +91,30 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pictures.count
+        if(upcomingalarms.count == 0){
+            self.todayAlarmsTV.setEmptyMessage("That's all for Today")
+        } else {
+            todayAlarmsTV.restore()
+        }
+        return upcomingalarms.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cellimage:UIImage!
+        var celltime:String = ""
         let cell = tableView.dequeueReusableCell(withIdentifier: "todayAlarmCell", for: indexPath) as! TodayAlarmCell
-        cell.setCell(picture: pictures[indexPath.row], timeValue: time[indexPath.row], afterFoodValue: afterFood[indexPath.row], medicinesValue: medicines[indexPath.row], enabledValue: enabled[indexPath.row])
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "hh:mm"
+        if let v = upcomingalarms[indexPath.row].time {
+            celltime = timeFormatter.string(from: v)
+        }
+        let pics = upcomingalarms[indexPath.row].pictures?.allObjects as! [Images]
+        if (pics.count > 0){
+        if let imageData = pics[0].image{
+            cellimage = UIImage(data:imageData,scale:0.1)
+        }
+        }
+        cell.setCell(picture: cellimage ?? UIImage(), timeValue: celltime, afterFoodValue: upcomingalarms[indexPath.row].whentotake ?? "", medicinesValue: upcomingalarms[indexPath.row].title ?? "", enabledValue: upcomingalarms[indexPath.row].enabled)
         return cell
     }
     
@@ -101,15 +128,39 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         self.present(navigationController, animated: true, completion: nil)
     }
     
-    
     @objc func didTapAdd() {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "add") as? NewAlarmViewController else {
             return
         }
         let navigationController = UINavigationController(rootViewController: vc)
+        vc.completion = { created in
+            if(created){
+                    self.viewDidAppear(true)
+                    self.todayAlarmsTV.reloadData()
+            }
+        }
+        navigationController.modalPresentationStyle = .fullScreen
         self.present(navigationController, animated: true, completion: nil)
     }
-
+    
+    func getUpcomingAlarms(){
+        let request:NSFetchRequest<Alarm> = Alarm.fetchRequest()
+        do {
+            self.allalarms = try context.fetch(request)
+        } catch {
+            print("Error load items ... \(error.localizedDescription)")
+        }
+        
+        for alarm in allalarms {
+            let timeFormatter = DateFormatter()
+            timeFormatter.dateFormat = "hh:mm a"
+            let now = Date()
+            if let alarmtime = alarm.time, alarmtime >= now {
+                upcomingalarms.append(alarm)
+            }
+        }
+        todayAlarmsTV.reloadData()
+        
+    }
 
 }
-
