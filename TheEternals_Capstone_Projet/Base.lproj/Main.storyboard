@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ePG-lk-PWT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ePG-lk-PWT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
@@ -143,18 +143,60 @@
         <!--Help-->
         <scene sceneID="0vV-jQ-UNx">
             <objects>
-                <viewController id="Bhf-KX-MYt" sceneMemberID="viewController">
+                <viewController id="Bhf-KX-MYt" customClass="HelpViewController" customModule="TheEternals_Capstone_Projet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4yV-JI-suu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aim-OC-x64">
+                                <rect key="frame" x="16" y="74" width="135" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V3b-ED-1VS">
+                                <rect key="frame" x="16" y="109" width="382" height="372"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Steps to create a med reminder
+• Click on + button in home screen.
+• Set title and time for the reminder. 
+• Set start date and end date if you want a recurring reminder.
+• You can also set the reminder for specific days in a week by selecting specific days which you can see when repeat switch is on.
+• You can record and set it as custom tone with the help of record button. Listen to it by clicking on play button.
+• Attach images to the reminder with the help of camera and gallery buttons in pictures section.
+• After setting all required fields, you can click on save which creates the reminder.
+•To update a reminder, click on alarm row which opens the alarm in edit mode.</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAv-3C-4dy">
+                                <rect key="frame" x="36" y="483" width="342" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="8xM-Oh-4Ta"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9js-RU-PuB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GAv-3C-4dy" firstAttribute="leading" secondItem="4yV-JI-suu" secondAttribute="leadingMargin" constant="16" id="4b1-m2-nj0"/>
+                            <constraint firstItem="aim-OC-x64" firstAttribute="leading" secondItem="9js-RU-PuB" secondAttribute="leading" constant="16" id="9oa-bb-Xe9"/>
+                            <constraint firstItem="9js-RU-PuB" firstAttribute="bottom" secondItem="GAv-3C-4dy" secondAttribute="bottom" constant="329" id="UVP-4E-IWw"/>
+                            <constraint firstItem="9js-RU-PuB" firstAttribute="trailing" secondItem="V3b-ED-1VS" secondAttribute="trailing" constant="16" id="dPN-xG-dLN"/>
+                            <constraint firstItem="V3b-ED-1VS" firstAttribute="leading" secondItem="9js-RU-PuB" secondAttribute="leading" constant="16" id="k2H-PP-Zw2"/>
+                            <constraint firstItem="aim-OC-x64" firstAttribute="top" secondItem="9js-RU-PuB" secondAttribute="top" constant="30" id="mko-fz-KEA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GAv-3C-4dy" secondAttribute="trailing" constant="16" id="qr0-JI-HX3"/>
+                            <constraint firstItem="GAv-3C-4dy" firstAttribute="top" secondItem="V3b-ED-1VS" secondAttribute="bottom" constant="2" id="xms-aa-8mU"/>
+                            <constraint firstItem="V3b-ED-1VS" firstAttribute="top" secondItem="aim-OC-x64" secondAttribute="bottom" constant="5" id="zER-Pp-6Is"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Help" image="info.circle" catalog="system" selectedImage="info.circle" id="StN-6F-YYt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TLa-sR-ZZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="383" y="305"/>
+            <point key="canvasLocation" x="382.60869565217394" y="304.6875"/>
         </scene>
         <!--New Reminder-->
         <scene sceneID="DoB-Ps-ld0">
@@ -933,8 +975,14 @@
         <image name="mic.fill" catalog="system" width="108" height="128"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
