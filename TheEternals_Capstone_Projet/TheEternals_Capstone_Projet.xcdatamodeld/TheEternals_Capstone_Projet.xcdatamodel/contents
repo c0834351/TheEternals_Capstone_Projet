@@ -12,8 +12,13 @@
         <attribute name="time" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="whentotake" optional="YES" attributeType="String"/>
+        <relationship name="alarmhistory" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="History" inverseName="alarm" inverseEntity="History"/>
         <relationship name="pictures" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Images" inverseName="alarm" inverseEntity="Images"/>
         <relationship name="repeatdays" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Repeatdays" inverseName="parentalarm" inverseEntity="Repeatdays"/>
+    </entity>
+    <entity name="History" representedClassName="History" syncable="YES" codeGenerationType="class">
+        <attribute name="taken" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="alarm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="alarmhistory" inverseEntity="Alarm"/>
     </entity>
     <entity name="Images" representedClassName="Images" syncable="YES" codeGenerationType="class">
         <attribute name="image" optional="YES" attributeType="Binary"/>
@@ -24,8 +29,9 @@
         <relationship name="parentalarm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="repeatdays" inverseEntity="Alarm"/>
     </entity>
     <elements>
-        <element name="Alarm" positionX="-63" positionY="-18" width="128" height="224"/>
+        <element name="Alarm" positionX="-63" positionY="-18" width="128" height="239"/>
         <element name="Images" positionX="-63" positionY="63" width="128" height="59"/>
         <element name="Repeatdays" positionX="-45" positionY="90" width="128" height="59"/>
+        <element name="History" positionX="-36" positionY="108" width="128" height="59"/>
     </elements>
 </model>
