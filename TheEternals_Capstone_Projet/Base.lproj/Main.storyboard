@@ -856,6 +856,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JXE-Wn-AvH" id="Zre-Qu-9J2"/>
+                                    <outlet property="delegate" destination="JXE-Wn-AvH" id="W70-bh-fou"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hxy-zY-agE"/>
@@ -872,6 +876,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="kZw-jt-qfI"/>
+                    <connections>
+                        <outlet property="historyTV" destination="d76-4J-BnR" id="ZIM-dN-tla"/>
+                        <outlet property="sortbyBTN" destination="jQr-RA-Fyn" id="V3A-ay-NTZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSe-AJ-0To" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
