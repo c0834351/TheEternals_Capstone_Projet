@@ -257,9 +257,13 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     }
     
     private func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
+        let paths = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
+        let soundspath = paths.appendingPathComponent("Sounds")
+        do {try FileManager.default.createDirectory(atPath: soundspath.path, withIntermediateDirectories: true, attributes: nil)}
+        catch{
+            print(error.localizedDescription)
+        }
+        return soundspath
     }
     
     private func getRecordingURL(_ fileName : String) -> URL {
@@ -267,7 +271,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     }
     
     private func startRec() {
-        audioFileName = "recording" + UUID().uuidString + ".m4a"
+        audioFileName = "recording" + UUID().uuidString + ".caf"
         let audioURL = getRecordingURL(audioFileName)
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
