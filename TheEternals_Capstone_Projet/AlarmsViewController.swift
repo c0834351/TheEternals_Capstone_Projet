@@ -49,6 +49,17 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "add") as? NewAlarmViewController else {
+            return
+        }
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.modalPresentationStyle = .fullScreen
+        vc.alarmToEdit = allalarms[indexPath.row]
+        self.present(navigationController, animated: true, completion: nil)
+        
+    }
+    
     private func getAlarms(){
         let request:NSFetchRequest<Alarm> = Alarm.fetchRequest()
         do {

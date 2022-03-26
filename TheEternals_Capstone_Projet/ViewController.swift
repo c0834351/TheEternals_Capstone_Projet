@@ -16,6 +16,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var ampmLabel: UILabel!
     
     @IBOutlet weak var todayAlarmsTV: UITableView!
+    private var upcomingalarms = [Alarm]()
     
     let pictures: [UIImage] = [UIImage(named: "dolo.jpg")!,UIImage(named: "hcq.jpg")!]
     let time: [String] = ["17:00", "18:00"]
@@ -88,6 +89,16 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "todayAlarmCell", for: indexPath) as! TodayAlarmCell
         cell.setCell(picture: pictures[indexPath.row], timeValue: time[indexPath.row], afterFoodValue: afterFood[indexPath.row], medicinesValue: medicines[indexPath.row], enabledValue: enabled[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "add") as? NewAlarmViewController else {
+            return
+        }
+        let navigationController = UINavigationController(rootViewController: vc)
+        vc.alarmToEdit = upcomingalarms[indexPath.row]
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true, completion: nil)
     }
     
     
