@@ -87,6 +87,11 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
             }
         })
         
+        if(alarmToEdit != nil){
+            self.title = "Edit Reminder"
+            populateFields()
+        }
+        
         defaultWeekdaysSVheight = weekdaysSVConstraint.constant
         defaultAudioOptionsSVheight = alarmToneHSHeightConstraint.constant
         defaultPicturesOptionsSVheight = picturesHSHeightConstraint.constant
@@ -192,15 +197,14 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
             showAlert(message: "Title for Alarm is required")
             return
         }
-        let timeformat = DateFormatter()
-        timeformat.dateFormat = "hh:mm a"
+        newAlarm.alarmid = UUID().uuidString
         newAlarm.title = name
         newAlarm.startdate = startDate.date
         newAlarm.enddate = endDate.date
         newAlarm.taken = false
         newAlarm.snoozeflag = snoozeSwitch.isOn
         newAlarm.repeatflag = repeatFlag.isOn
-        newAlarm.time = timeformat.string(from: alarmTime.date)
+        newAlarm.time = alarmTime.date
         newAlarm.audio = audioFileName
         newAlarm.enabled = true
         self.alarms.append(newAlarm)
@@ -226,6 +230,16 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     
     
     @IBAction func didTapShowPicturesOptions(_ sender: Any) {
+    }
+    
+    func populateFields(){
+        alarmTitle.text = alarmToEdit.title
+        alarmTime.date = alarmToEdit.time!
+        startDate.date = alarmToEdit.startdate!
+        endDate.date = alarmToEdit.enddate!
+        repeatFlag.setOn(alarmToEdit.repeatflag, animated: true)
+        snoozeSwitch.setOn(alarmToEdit.snoozeflag, animated: true)
+        alarmimages = alarmToEdit.pictures?.allObjects as! [Images]
     }
     
     private func getDocumentsDirectory() -> URL {

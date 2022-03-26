@@ -44,8 +44,13 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let imagedata = allalarms[indexPath.row].value(forKey: "image1") as? Data{
             cellimage = UIImage(data: imagedata)
         }
-        
-        cell.setCell(picture: cellimage, timeValue: allalarms[indexPath.row].time ?? "", afterFoodValue: allalarms[indexPath.row].whentotake ?? "", medicinesValue: allalarms[indexPath.row].title ?? "", enabledValue: allalarms[indexPath.row].enabled)
+        var celltime:String = ""
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "hh:mm"
+        if let v = allalarms[indexPath.row].time {
+            celltime = timeFormatter.string(from: v)
+        }
+        cell.setCell(picture: cellimage, timeValue: celltime, afterFoodValue: allalarms[indexPath.row].whentotake ?? "", medicinesValue: allalarms[indexPath.row].title ?? "", enabledValue: allalarms[indexPath.row].enabled)
         return cell
     }
     
