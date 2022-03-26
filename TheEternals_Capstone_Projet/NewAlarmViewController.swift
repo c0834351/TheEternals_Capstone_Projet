@@ -161,7 +161,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
                     if allowed {
                         self.startRec()
                     } else {
-                        showAlert(message: "Microphone permission denied")
+                        self.showAlert(message: "Microphone permission denied")
                     }
                 }
             }
@@ -193,23 +193,37 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     
     
     @IBAction func didTapSave() {
-        guard let name = alarmTitle.text else{
+        guard let name = alarmTitle.text, !name.isEmpty else{
             showAlert(message: "Title for Alarm is required")
             return
         }
+        
+        if (alarmToEdit == nil) {
         newAlarm.alarmid = UUID().uuidString
-        newAlarm.title = name
+        newAlarm.title = alarmTitle.text
         newAlarm.startdate = startDate.date
         newAlarm.enddate = endDate.date
-        newAlarm.taken = false
         newAlarm.snoozeflag = snoozeSwitch.isOn
         newAlarm.repeatflag = repeatFlag.isOn
         newAlarm.time = alarmTime.date
         newAlarm.audio = audioFileName
         newAlarm.enabled = true
-        self.alarms.append(newAlarm)
+        newAlarm.pictures = Set(alarmimages) as NSSet
+        newAlarm.repeatdays = Set(repeatdays) as NSSet
         self.saveData()
+        NotificationCenter.default.post(name: Notification.Name("alarm created"), object: nil)
+        completion?(true)
         self.dismiss(animated: true, completion: nil)
+        } else {
+            alarmToEdit.title = alarmTitle.text
+            alarmToEdit.startdate = startDate.date
+            alarmToEdit.enddate = endDate.date
+            alarmToEdit.snoozeflag = snoozeSwitch.isOn
+            alarmToEdit.repeatflag = repeatFlag.isOn
+            alarmToEdit.pictures = Set(alarmimages) as NSSet
+            alarmToEdit.repeatdays = Set(repeatdays) as NSSet
+            self.saveData()
+        }
     }
     
     
