@@ -54,11 +54,17 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     var defaultWeekdaysSVheight = 0.0
     var defaultAudioOptionsSVheight = 0.0
     var defaultPicturesOptionsSVheight = 0.0
+    var alarmToEdit: Alarm!
     private var recordingSession: AVAudioSession!
     private var recorder: AVAudioRecorder!
     private var player =  AVAudioPlayer()
-    private var newAlarm: Alarm!
     private var audioFileName = ""
+    private var notificationimage: UIImage!
+    private var alarmimages = [Images]()
+    private var repeatdays = [Repeatdays]()
+    private var newAlarm: Alarm!
+    private var notificationpermissiongranted: Bool = false
+    public var completion: ((Bool) -> Void)?
 
 
     var alarms = [Alarm]()
@@ -73,17 +79,41 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         gradientLayer.colors = [UIColor.systemBlue.cgColor, UIColor.systemGray3.cgColor]
         view.layer.insertSublayer(gradientLayer, at: 0)
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert, .badge], completionHandler: {success, error in
+            if(success){
+                self.notificationpermissiongranted = true
+            }else if error != nil{
+                print("error occured")
+            }
+        })
+        
+        defaultWeekdaysSVheight = weekdaysSVConstraint.constant
+        defaultAudioOptionsSVheight = alarmToneHSHeightConstraint.constant
+        defaultPicturesOptionsSVheight = picturesHSHeightConstraint.constant
+        
+        sundayButton.layer.cornerRadius = sundayButton.frame.width/2
+        mondayButton.layer.cornerRadius = mondayButton.frame.width/2
+        TuesdayButton.layer.cornerRadius = TuesdayButton.frame.width/2
+        wednesdayButton.layer.cornerRadius = wednesdayButton.frame.width/2
+        thursdayButton.layer.cornerRadius = thursdayButton.frame.width/2
+        fridayButton.layer.cornerRadius = fridayButton.frame.width/2
+        saturdayButton.layer.cornerRadius = thursdayButton.frame.width/2
+        
+        weekdaysSVConstraint.constant = 0.0
+        alarmToneHSHeightConstraint.constant = 0.0
+        picturesHSHeightConstraint.constant = 0.0
+
+        
         newAlarm = Alarm(context: self.context)
         startDate.minimumDate = Date()
         endDate.minimumDate = Date()
-        defaultWeekdaysSVheight = weekdaysSVConstraint.constant
-        weekdaysSVConstraint.constant = 0.0
         datesVStackview.layer.cornerRadius = 8
-        
+        recordingSession = AVAudioSession.sharedInstance()
     }
     
     
     @IBAction func repeatFlagIsON(_ sender: UISwitch) {
+        newAlarm.repeatflag = repeatFlag.isOn
         if (repeatFlag.isOn){
             let bIsHidden = weekdaysStackView.isHidden
 
@@ -96,6 +126,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
                 self.view.layoutIfNeeded()
             })
         } else {
+            repeatdays.removeAll()
             let bIsHidden = weekdaysStackView.isHidden
             
             if !bIsHidden {
@@ -147,10 +178,6 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     }
     
     
-    @IBAction func setDefaultToneClicked(_ sender: UIButton) {
-    }
-    
-    
     @IBAction func cameraBtnClicked(_ sender: UIButton) {
     }
     
@@ -183,6 +210,13 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     
     
     @IBAction func didTapCancel() {
+        self.context.delete(newAlarm)
+        do {
+            try self.context.save()
+            print("Deleted empty row")
+        }catch{
+            print("Error deleting record")
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
