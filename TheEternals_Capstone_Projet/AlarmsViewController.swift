@@ -96,3 +96,33 @@ extension UITableView {
         self.separatorStyle = .singleLine
     }
 }
+
+extension AlarmsViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            getAlarms()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }else{
+            searchAlarms(searchText: searchText)
+        }
+    }
+    
+    func searchAlarms( searchText: String){
+        
+        let request:NSFetchRequest<Alarm> = Alarm.fetchRequest()
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+        print(searchText)
+        request.predicate = predicate
+        do {
+            self.allalarms = try context.fetch(request)
+        } catch
+        let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        allAlarmsTV.reloadData()
+    }
+    
+}
