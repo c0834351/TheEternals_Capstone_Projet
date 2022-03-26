@@ -10,6 +10,8 @@
 		3DAD856C27E7E4C40009E46F /* NewAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD856B27E7E4C40009E46F /* NewAlarmViewController.swift */; };
 		7778A24227E7964200288A3F /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7778A24127E7964200288A3F /* AlarmsViewController.swift */; };
 		AE93330C27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93330B27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift */; };
+		AEAD6B7427EFB78A00E3ACFE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */; };
+		AEAD6B7627EFBC8200E3ACFE /* AlarmHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD6B7527EFBC8100E3ACFE /* AlarmHistoryCell.swift */; };
 		DD2D1C2927E03E7D00357E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2827E03E7D00357E9C /* AppDelegate.swift */; };
 		DD2D1C2B27E03E7D00357E9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2A27E03E7D00357E9C /* SceneDelegate.swift */; };
 		DD2D1C2D27E03E7D00357E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2C27E03E7D00357E9C /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 		3DAD856B27E7E4C40009E46F /* NewAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmViewController.swift; sourceTree = "<group>"; };
 		7778A24127E7964200288A3F /* AlarmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
 		AE93330B27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCellTableViewCell.swift; sourceTree = "<group>"; };
+		AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		AEAD6B7527EFBC8100E3ACFE /* AlarmHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmHistoryCell.swift; sourceTree = "<group>"; };
 		DD2D1C2527E03E7D00357E9C /* TheEternals_Capstone_Projet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheEternals_Capstone_Projet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2D1C2827E03E7D00357E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD2D1C2A27E03E7D00357E9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				7778A24127E7964200288A3F /* AlarmsViewController.swift */,
 				3DAD856B27E7E4C40009E46F /* NewAlarmViewController.swift */,
 				AE93330B27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift */,
+				AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */,
+				AEAD6B7527EFBC8100E3ACFE /* AlarmHistoryCell.swift */,
 			);
 			path = TheEternals_Capstone_Projet;
 			sourceTree = "<group>";
@@ -153,12 +159,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEAD6B7627EFBC8200E3ACFE /* AlarmHistoryCell.swift in Sources */,
 				DD2D1C2D27E03E7D00357E9C /* ViewController.swift in Sources */,
 				DD2D1C2927E03E7D00357E9C /* AppDelegate.swift in Sources */,
 				3DAD856C27E7E4C40009E46F /* NewAlarmViewController.swift in Sources */,
 				DD2D1C3327E03E7D00357E9C /* TheEternals_Capstone_Projet.xcdatamodeld in Sources */,
 				7778A24227E7964200288A3F /* AlarmsViewController.swift in Sources */,
 				DD2D1C4227E1912A00357E9C /* TodayAlarmCell.swift in Sources */,
+				AEAD6B7427EFB78A00E3ACFE /* HistoryViewController.swift in Sources */,
 				DD2D1C2B27E03E7D00357E9C /* SceneDelegate.swift in Sources */,
 				AE93330C27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift in Sources */,
 			);
