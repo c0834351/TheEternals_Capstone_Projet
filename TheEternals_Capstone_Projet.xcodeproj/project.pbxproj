@@ -12,6 +12,7 @@
 		AE93330C27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93330B27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift */; };
 		AEAD6B7427EFB78A00E3ACFE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */; };
 		AEAD6B7627EFBC8200E3ACFE /* AlarmHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD6B7527EFBC8100E3ACFE /* AlarmHistoryCell.swift */; };
+		C8D43D5227EFC97B00329446 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D43D5127EFC97B00329446 /* HelpViewController.swift */; };
 		DD2D1C2927E03E7D00357E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2827E03E7D00357E9C /* AppDelegate.swift */; };
 		DD2D1C2B27E03E7D00357E9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2A27E03E7D00357E9C /* SceneDelegate.swift */; };
 		DD2D1C2D27E03E7D00357E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D1C2C27E03E7D00357E9C /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		AE93330B27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCellTableViewCell.swift; sourceTree = "<group>"; };
 		AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		AEAD6B7527EFBC8100E3ACFE /* AlarmHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmHistoryCell.swift; sourceTree = "<group>"; };
+		C8D43D5127EFC97B00329446 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		DD2D1C2527E03E7D00357E9C /* TheEternals_Capstone_Projet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheEternals_Capstone_Projet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2D1C2827E03E7D00357E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD2D1C2A27E03E7D00357E9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				AE93330B27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift */,
 				AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */,
 				AEAD6B7527EFBC8100E3ACFE /* AlarmHistoryCell.swift */,
+				C8D43D5127EFC97B00329446 /* HelpViewController.swift */,
 			);
 			path = TheEternals_Capstone_Projet;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8D43D5227EFC97B00329446 /* HelpViewController.swift in Sources */,
 				AEAD6B7627EFBC8200E3ACFE /* AlarmHistoryCell.swift in Sources */,
 				DD2D1C2D27E03E7D00357E9C /* ViewController.swift in Sources */,
 				DD2D1C2927E03E7D00357E9C /* AppDelegate.swift in Sources */,
