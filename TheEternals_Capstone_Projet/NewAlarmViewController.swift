@@ -18,7 +18,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     @IBOutlet weak var picturesHStackView: UIStackView!
     @IBOutlet weak var repeatStackView: UIStackView!
     
-    //collections view
+    //collectionsView
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     
     //Constraints
@@ -257,10 +257,57 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     
     
     @IBAction func didTapShowAudioOptions(_ sender: UIButton) {
+        if (alarmToneHSHeightConstraint.constant == 0.0){
+            sender.setImage(UIImage(systemName: "chevron.up.circle"), for: .normal)
+            let hiddenflag = alarmToneHStackView.isHidden
+            alarmToneHStackView.isHidden = !hiddenflag
+
+        UIStackView.animate(withDuration: 0.3, animations: {
+            self.alarmToneHSHeightConstraint.constant = self.alarmToneHSHeightConstraint.constant > 0 ? 0 : self.defaultAudioOptionsSVheight
+            self.view.layoutIfNeeded()
+        })
+        } else if (alarmToneHSHeightConstraint.constant > 0.0){
+            sender.setImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
+            let bIsHidden = alarmToneHStackView.isHidden
+            
+            if !bIsHidden {
+                alarmToneHStackView.isHidden = true
+            }
+
+            UIView.animate(withDuration: 0.3, animations: {
+                self.alarmToneHSHeightConstraint.constant = 0.0
+                self.view.layoutIfNeeded()
+            })
+        }
     }
     
     
-    @IBAction func didTapShowPicturesOptions(_ sender: Any) {
+    @IBAction func didTapShowPicturesOptions(_ sender: UIButton) {
+        if (picturesHSHeightConstraint.constant == 0.0){
+            sender.setImage(UIImage(systemName: "chevron.up.circle"), for: .normal)
+            let hiddenflag = picturesHStackView.isHidden
+            picturesHStackView.isHidden = !hiddenflag
+            let picturesshown = imagesCollectionView.isHidden
+            imagesCollectionView.isHidden = !picturesshown
+
+        UIStackView.animate(withDuration: 0.3, animations: {
+            self.picturesHSHeightConstraint.constant = self.picturesHSHeightConstraint.constant > 0 ? 0 : self.defaultPicturesOptionsSVheight
+            self.view.layoutIfNeeded()
+        })
+        } else if (picturesHSHeightConstraint.constant > 0.0){
+            sender.setImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
+            let bIsHidden = picturesHStackView.isHidden
+
+            if !bIsHidden {
+                picturesHStackView.isHidden = true
+                imagesCollectionView.isHidden = true
+            }
+
+            UIView.animate(withDuration: 0.3, animations: {
+                self.picturesHSHeightConstraint.constant = 0.0
+                self.view.layoutIfNeeded()
+            })
+        }
     }
     
     func populateFields(){
