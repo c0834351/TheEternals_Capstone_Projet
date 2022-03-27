@@ -9,8 +9,10 @@ import UIKit
 
 class HistoryViewController: UIViewController {
 
+    //TableViews
     @IBOutlet weak var historyTV: UITableView!
     
+    //Buttons
     @IBOutlet weak var sortbyBTN: UIButton!
     
     var alarmhistory = [History]()

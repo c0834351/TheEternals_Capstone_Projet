@@ -471,8 +471,7 @@
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="cameraBtnClicked:" destination="xo7-jn-sUT" eventType="touchUpInside" id="OVR-w7-hkS"/>
-                                            <action selector="galleryBtnClicked:" destination="xo7-jn-sUT" eventType="touchUpInside" id="ksZ-71-Yp7"/>
+                                            <action selector="cameraBtnClicked:" destination="xo7-jn-sUT" eventType="touchUpInside" id="Nhb-N6-x5W"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-q0-bxc">
@@ -484,6 +483,9 @@
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="galleryBtnClicked:" destination="xo7-jn-sUT" eventType="touchUpInside" id="OCE-Vg-g7z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -541,9 +543,9 @@
                                 </subviews>
                             </stackView>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xLg-Hv-3z5">
-                                <rect key="frame" x="16" y="685" width="382" height="167"/>
+                                <rect key="frame" x="16" y="685" width="382" height="132"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OP1-g7-tfe">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OP1-g7-tfe">
                                     <size key="itemSize" width="128" height="66"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -551,7 +553,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imagecell" id="R7A-61-Zvb" customClass="ImageCollectionViewCell" customModule="TheEternals_Capstone_Projet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="104" height="84"/>
+                                        <rect key="frame" x="0.0" y="24" width="104" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2st-vF-SX5">
                                             <rect key="frame" x="0.0" y="0.0" width="104" height="84"/>
@@ -577,6 +579,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="xo7-jn-sUT" id="mru-J2-4IJ"/>
+                                    <outlet property="delegate" destination="xo7-jn-sUT" id="zeE-T8-JPX"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0uJ-o2-yYJ"/>
@@ -606,7 +612,7 @@
                             <constraint firstItem="0uJ-o2-yYJ" firstAttribute="trailing" secondItem="HWj-vG-qbw" secondAttribute="trailing" constant="16" id="a60-Tk-K9v"/>
                             <constraint firstItem="xLg-Hv-3z5" firstAttribute="top" secondItem="h0M-gX-iX3" secondAttribute="bottom" constant="10" id="fkg-Z6-xl0"/>
                             <constraint firstItem="95w-6t-4ai" firstAttribute="top" secondItem="kIE-rU-8xX" secondAttribute="bottom" constant="10" id="geB-az-YFu"/>
-                            <constraint firstItem="0uJ-o2-yYJ" firstAttribute="bottom" secondItem="xLg-Hv-3z5" secondAttribute="bottom" constant="10" id="jCc-ec-76c"/>
+                            <constraint firstItem="0uJ-o2-yYJ" firstAttribute="bottom" secondItem="xLg-Hv-3z5" secondAttribute="bottom" constant="45" id="jCc-ec-76c"/>
                             <constraint firstItem="kIE-rU-8xX" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="jnJ-F9-UO8"/>
                             <constraint firstItem="Yhr-6e-PTc" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="lT5-sj-K96"/>
                             <constraint firstItem="h0M-gX-iX3" firstAttribute="leading" secondItem="0uJ-o2-yYJ" secondAttribute="leading" constant="16" id="o28-7H-CAV"/>
