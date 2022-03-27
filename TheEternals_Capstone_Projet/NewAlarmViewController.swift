@@ -186,10 +186,25 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     
     
     @IBAction func cameraBtnClicked(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = true
+            present(imagePicker, animated: true, completion: nil)
+        }
+        else {
+            showAlert(message: "Camera not available")
+        }
     }
     
     
     @IBAction func galleryBtnClicked(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.allowsEditing = true
+            present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     
@@ -308,7 +323,28 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         self.present(alert, animated: true, completion: nil)
     }
     
+}
+
+//Extensions
+
+extension NewAlarmViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        {
+            let newImage  = Images(context: self.context)
+            if let jpegdata = image.jpegData(compressionQuality: 0.5) {
+                newImage.image = jpegdata
+            }
+            newImage.alarm = newAlarm
+            alarmimages.append(newImage)
+            imagesCollectionView.reloadData()
+        }
+        picker.dismiss(animated: true, completion: nil)
+        }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
 
     

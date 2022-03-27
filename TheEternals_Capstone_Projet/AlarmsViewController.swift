@@ -76,6 +76,8 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 }
 
+// Extensions
+
 extension UITableView {
 
     func setEmptyMessage(_ message: String) {
