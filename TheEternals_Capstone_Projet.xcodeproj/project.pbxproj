@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3DAD856C27E7E4C40009E46F /* NewAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD856B27E7E4C40009E46F /* NewAlarmViewController.swift */; };
+		3DEDCDA527F11E1A00F50AB7 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDCDA427F11E1A00F50AB7 /* ImageCollectionViewCell.swift */; };
 		7778A24227E7964200288A3F /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7778A24127E7964200288A3F /* AlarmsViewController.swift */; };
 		AE93330C27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93330B27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift */; };
 		AEAD6B7427EFB78A00E3ACFE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		3DAD856B27E7E4C40009E46F /* NewAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmViewController.swift; sourceTree = "<group>"; };
+		3DEDCDA427F11E1A00F50AB7 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7778A24127E7964200288A3F /* AlarmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
 		AE93330B27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCellTableViewCell.swift; sourceTree = "<group>"; };
 		AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */,
 				AEAD6B7527EFBC8100E3ACFE /* AlarmHistoryCell.swift */,
 				C8D43D5127EFC97B00329446 /* HelpViewController.swift */,
+				3DEDCDA427F11E1A00F50AB7 /* ImageCollectionViewCell.swift */,
 			);
 			path = TheEternals_Capstone_Projet;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				DD2D1C2927E03E7D00357E9C /* AppDelegate.swift in Sources */,
 				3DAD856C27E7E4C40009E46F /* NewAlarmViewController.swift in Sources */,
 				DD2D1C3327E03E7D00357E9C /* TheEternals_Capstone_Projet.xcdatamodeld in Sources */,
+				3DEDCDA527F11E1A00F50AB7 /* ImageCollectionViewCell.swift in Sources */,
 				7778A24227E7964200288A3F /* AlarmsViewController.swift in Sources */,
 				DD2D1C4227E1912A00357E9C /* TodayAlarmCell.swift in Sources */,
 				AEAD6B7427EFB78A00E3ACFE /* HistoryViewController.swift in Sources */,

@@ -17,6 +17,8 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     @IBOutlet weak var alarmToneHStackView: UIStackView!
     @IBOutlet weak var picturesHStackView: UIStackView!
     @IBOutlet weak var repeatStackView: UIStackView!
+    
+    //collections view
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     
     //Constraints

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ePG-lk-PWT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ePG-lk-PWT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
@@ -157,7 +157,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V3b-ED-1VS">
                                 <rect key="frame" x="16" y="109" width="382" height="372"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Steps to create a med reminder
+                                <string key="text">Steps to create a med reminder
 • Click on + button in home screen.
 • Set title and time for the reminder. 
 • Set start date and end date if you want a recurring reminder.
@@ -165,7 +165,7 @@
 • You can record and set it as custom tone with the help of record button. Listen to it by clicking on play button.
 • Attach images to the reminder with the help of camera and gallery buttons in pictures section.
 • After setting all required fields, you can click on save which creates the reminder.
-•To update a reminder, click on alarm row which opens the alarm in edit mode.</mutableString>
+•To update a reminder, click on alarm row which opens the alarm in edit mode.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -550,7 +550,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imagecell" id="R7A-61-Zvb">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imagecell" id="R7A-61-Zvb" customClass="ImageCollectionViewCell" customModule="TheEternals_Capstone_Projet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="104" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2st-vF-SX5">
@@ -572,6 +572,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="vsb-X6-h8V" secondAttribute="trailing" constant="2" id="vHl-QH-DXe"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="vsb-X6-h8V" id="HY6-Se-wm7"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
