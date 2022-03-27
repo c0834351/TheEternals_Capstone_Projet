@@ -347,5 +347,5 @@ extension NewAlarmViewController: UIImagePickerControllerDelegate, UINavigationC
     }
 }
 
-    
+
 
