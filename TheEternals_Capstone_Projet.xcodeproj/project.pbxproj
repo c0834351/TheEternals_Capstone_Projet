@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3DAD856C27E7E4C40009E46F /* NewAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD856B27E7E4C40009E46F /* NewAlarmViewController.swift */; };
 		3DEDCDA527F11E1A00F50AB7 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDCDA427F11E1A00F50AB7 /* ImageCollectionViewCell.swift */; };
+		3DEDCDA727F121CC00F50AB7 /* ImagePopupVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEDCDA627F121CC00F50AB7 /* ImagePopupVCViewController.swift */; };
 		7778A24227E7964200288A3F /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7778A24127E7964200288A3F /* AlarmsViewController.swift */; };
 		AE93330C27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE93330B27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift */; };
 		AEAD6B7427EFB78A00E3ACFE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		3DAD856B27E7E4C40009E46F /* NewAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmViewController.swift; sourceTree = "<group>"; };
 		3DEDCDA427F11E1A00F50AB7 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DEDCDA627F121CC00F50AB7 /* ImagePopupVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePopupVCViewController.swift; sourceTree = "<group>"; };
 		7778A24127E7964200288A3F /* AlarmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
 		AE93330B27E9527B00CEFEB9 /* AlarmCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCellTableViewCell.swift; sourceTree = "<group>"; };
 		AEAD6B7327EFB78A00E3ACFE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				AEAD6B7527EFBC8100E3ACFE /* AlarmHistoryCell.swift */,
 				C8D43D5127EFC97B00329446 /* HelpViewController.swift */,
 				3DEDCDA427F11E1A00F50AB7 /* ImageCollectionViewCell.swift */,
+				3DEDCDA627F121CC00F50AB7 /* ImagePopupVCViewController.swift */,
 			);
 			path = TheEternals_Capstone_Projet;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DEDCDA727F121CC00F50AB7 /* ImagePopupVCViewController.swift in Sources */,
 				C8D43D5227EFC97B00329446 /* HelpViewController.swift in Sources */,
 				AEAD6B7627EFBC8200E3ACFE /* AlarmHistoryCell.swift in Sources */,
 				DD2D1C2D27E03E7D00357E9C /* ViewController.swift in Sources */,

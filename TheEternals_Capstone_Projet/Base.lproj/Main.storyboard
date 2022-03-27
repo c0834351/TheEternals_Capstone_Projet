@@ -668,6 +668,44 @@
             </objects>
             <point key="canvasLocation" x="1430.4347826086957" y="1100.2232142857142"/>
         </scene>
+        <!--Image PopupVC View Controller-->
+        <scene sceneID="xMz-GQ-1A0">
+            <objects>
+                <viewController storyboardIdentifier="imagepopup" id="w4V-Yx-vmZ" customClass="ImagePopupVCViewController" customModule="TheEternals_Capstone_Projet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TQ8-7a-EJc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="voH-Nd-yaz">
+                                <rect key="frame" x="40" y="245" width="334" height="406"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="elB-lO-jzR"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="voH-Nd-yaz" firstAttribute="centerY" secondItem="TQ8-7a-EJc" secondAttribute="centerY" id="3dt-9g-uyL"/>
+                            <constraint firstItem="voH-Nd-yaz" firstAttribute="top" secondItem="elB-lO-jzR" secondAttribute="top" constant="201" id="58b-Rk-Y5n"/>
+                            <constraint firstItem="voH-Nd-yaz" firstAttribute="centerX" secondItem="TQ8-7a-EJc" secondAttribute="centerX" id="87n-rf-bKp"/>
+                            <constraint firstItem="voH-Nd-yaz" firstAttribute="leading" secondItem="elB-lO-jzR" secondAttribute="leading" constant="40" id="bc7-H2-xyH"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cWO-UU-xiF" appends="YES" id="aj9-Mk-aM7"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="voH-Nd-yaz" id="bix-Hu-Vzm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aRm-NH-fyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cWO-UU-xiF">
+                    <connections>
+                        <action selector="tappedOutside:" destination="w4V-Yx-vmZ" id="3up-ha-4F3"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2225" y="1100"/>
+        </scene>
         <!--Home-->
         <scene sceneID="Fjh-Pq-Fie">
             <objects>

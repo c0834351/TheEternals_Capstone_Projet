@@ -347,5 +347,33 @@ extension NewAlarmViewController: UIImagePickerControllerDelegate, UINavigationC
     }
 }
 
+extension NewAlarmViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return alarmimages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imagecell",
+                                                         for: indexPath) as? ImageCollectionViewCell {
+            let image = alarmimages[indexPath.row]
+            if let imageData = image.image {
+                cell.imageView.image = UIImage(data:imageData,scale:0.1)
+            }
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let image = alarmimages[indexPath.row]
+        if  let popupViewController = self.storyboard?.instantiateViewController(withIdentifier: "imagepopup") as? ImagePopupVCViewController {
+            if let imageData = image.image {
+                popupViewController.img = UIImage(data:imageData,scale:0.1)
+            }
+            popupViewController.modalPresentationStyle = .popover
+            present(popupViewController, animated: true, completion:nil)
+        }
 
+    }
+}
 
