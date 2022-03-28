@@ -986,8 +986,8 @@
                     <connections>
                         <segue destination="JaW-DS-cMZ" kind="relationship" relationship="viewControllers" id="hiS-Ok-aVI"/>
                         <segue destination="X2z-Zl-Jsa" kind="relationship" relationship="viewControllers" id="H3D-ce-Kig"/>
-                        <segue destination="Bhf-KX-MYt" kind="relationship" relationship="viewControllers" id="OWq-00-0ji"/>
                         <segue destination="JXE-Wn-AvH" kind="relationship" relationship="viewControllers" id="k2C-yt-hBT"/>
+                        <segue destination="Bhf-KX-MYt" kind="relationship" relationship="viewControllers" id="OWq-00-0ji"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3s-Ik-r2r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
