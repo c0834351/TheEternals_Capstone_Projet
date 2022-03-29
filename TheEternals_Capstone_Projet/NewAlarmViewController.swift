@@ -89,6 +89,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
             }
         })
         
+        setPopupButton()
         if(alarmToEdit != nil){
             self.title = "Edit Reminder"
             populateFields()
@@ -411,6 +412,38 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
             }
         }
     }
+    func setPopupButton(){
+        if(alarmToEdit != nil) {
+            let editOptionsClosure = {(action: UIAction) in
+                self.alarmToEdit.whentotake = action.title
+                self.whentoTake.backgroundColor = UIColor.systemGreen
+            }
+            if(alarmToEdit.whentotake == "After Food") {
+            whentoTake.menu = UIMenu(children: [UIAction(title: "After Food", state: .on, handler: editOptionsClosure),
+                UIAction(title: "Before Food",handler: editOptionsClosure)])
+                self.whentoTake.backgroundColor = UIColor.systemGreen
+            } else if(alarmToEdit.whentotake == "Before Food"){
+                whentoTake.menu = UIMenu(children: [UIAction(title: "Before Food", state: .on, handler: editOptionsClosure),
+                    UIAction(title: "After Food",handler: editOptionsClosure)])
+                self.whentoTake.backgroundColor = UIColor.systemGreen
+            } else {
+                whentoTake.menu = UIMenu(children: [UIAction(title: "After Food", state: .on, handler: editOptionsClosure),
+                    UIAction(title: "Before Food",handler: editOptionsClosure)])
+            }
+            whentoTake.showsMenuAsPrimaryAction = true
+            whentoTake.changesSelectionAsPrimaryAction = true
+        } else {
+        let optionsClosure = {(action: UIAction) in
+            self.newAlarm.whentotake = action.title
+            self.whentoTake.backgroundColor = UIColor.systemGreen
+        }
+        whentoTake.menu = UIMenu(children: [UIAction(title: "After Food", state: .on, handler: optionsClosure),
+            UIAction(title: "Before Food",handler: optionsClosure)])
+        whentoTake.showsMenuAsPrimaryAction = true
+        whentoTake.changesSelectionAsPrimaryAction = true
+        }
+    }
+
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
