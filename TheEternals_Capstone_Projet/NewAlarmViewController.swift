@@ -150,7 +150,12 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     
     
     @IBAction func snoozeSwitchTapped(_ sender: UISwitch) {
-    }
+        if(alarmToEdit != nil){
+            alarmToEdit.snoozeflag = snoozeSwitch.isOn
+        } else {
+            newAlarm.snoozeflag = snoozeSwitch.isOn
+        }
+      }
     
     
     
