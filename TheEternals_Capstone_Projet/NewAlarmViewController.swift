@@ -72,7 +72,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     var alarms = [Alarm]()
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    let notificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +81,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         gradientLayer.colors = [UIColor.systemBlue.cgColor, UIColor.systemGray3.cgColor]
         view.layer.insertSublayer(gradientLayer, at: 0)
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert, .badge], completionHandler: {success, error in
+        notificationCenter.requestAuthorization(options: [.sound, .alert, .badge], completionHandler: {success, error in
             if(success){
                 self.notificationpermissiongranted = true
             }else if error != nil{
@@ -358,6 +358,15 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     private func saveData () {
         do {
             try context.save()
+            if (!alarmimages.isEmpty){
+                notificationimage = resizeImage(image: UIImage(data: alarmimages[0].image!)!, targetSize: CGSize(width: 800, height: 800))
+            }
+            if(alarmToEdit == nil){
+            CreateReminder(alarm: newAlarm)
+            } else {
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [alarmToEdit.alarmid ?? ""])
+                CreateReminder(alarm: alarmToEdit)
+            }
         } catch {
             print("Error saving data.. \(error.localizedDescription)")
         }
@@ -370,6 +379,64 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         self.present(alert, animated: true, completion: nil)
     }
     
+    func CreateReminder(alarm: Alarm) {
+        DispatchQueue.main.async {
+            let content = UNMutableNotificationContent()
+            content.title = "MedAlarm Reminder"
+            if let tone = alarm.audio {
+                content.sound = UNNotificationSound(named: UNNotificationSoundName(tone))
+            }
+            content.body = "Time to have \(alarm.title ?? "")"
+            if let notifpic = self.notificationimage {
+                if let attachment = UNNotificationAttachment.create(identifier: alarm.title ?? "", image: notifpic, options: nil) {
+                    content.attachments = [attachment]
+                    }
+            }
+            content.categoryIdentifier = "MED_TAKEN_OR_NOT"
+            let snoozeaction = UNNotificationAction(identifier: "SHOW", title: "Show", options: [.foreground])
+            let takenaction = UNNotificationAction(identifier: "TAKEN", title: "Taken", options: [.foreground])
+            let medreminderCategory = UNNotificationCategory(identifier: content.categoryIdentifier,
+                                               actions: [snoozeaction, takenaction],
+                                               intentIdentifiers: [],
+                                               options: [])
+            self.notificationCenter.setNotificationCategories([medreminderCategory])
+            let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.alarmTime.date), repeats: self.repeatFlag.isOn)
+            if let id = alarm.alarmid {
+                let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+                    self.notificationCenter.add(request, withCompletionHandler: {error in
+                    if(error != nil){
+                        print(error?.localizedDescription ?? "")
+                    }
+                })
+            }
+        }
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x:0, y:0, width: newSize.width, height: newSize.height)
+
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
+    }
 }
 
 //Extensions
@@ -424,3 +491,23 @@ extension NewAlarmViewController: UICollectionViewDataSource, UICollectionViewDe
     }
 }
 
+extension UNNotificationAttachment {
+
+    static func create(identifier: String, image: UIImage, options: [NSObject : AnyObject]?) -> UNNotificationAttachment? {
+        let fileManager = FileManager.default
+        let tmpSubFolderName = ProcessInfo.processInfo.globallyUniqueString
+        let tmpSubFolderURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(tmpSubFolderName, isDirectory: true)
+        do {
+            try fileManager.createDirectory(at: tmpSubFolderURL, withIntermediateDirectories: true, attributes: nil)
+            let imageFileIdentifier = identifier+".png"
+            let fileURL = tmpSubFolderURL.appendingPathComponent(imageFileIdentifier)
+            let imageData = UIImage.pngData(image)
+            try imageData()?.write(to: fileURL)
+            let imageAttachment = try UNNotificationAttachment.init(identifier: imageFileIdentifier, url: fileURL, options: options)
+            return imageAttachment
+        } catch {
+            print("error " + error.localizedDescription)
+        }
+        return nil
+    }
+}
