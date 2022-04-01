@@ -383,6 +383,16 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         }
     }
     
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        recordBtnLB.setTitle("Record", for:.normal)
+        recordBtnLB.setImage(UIImage(systemName: "mic.fill"), for: .normal)
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        playBtnLB.setTitle("Play", for: .normal)
+        playBtnLB.setImage(UIImage(systemName: "play.fill"), for: .normal)
+    }
+    
     private func saveData () {
         do {
             try context.save()
