@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UNUserNotificationCenter.current().delegate = self
+        print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
         return true
     }
 
@@ -77,5 +79,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate:UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        UNUserNotificationCenter.current().delegate = self
+        completionHandler([.badge, .sound, .list, .banner])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if(response.actionIdentifier == "TAKEN"){
+            let notifid = response.notification.request.identifier
+            var alarms = [Alarm]()
+            var historyItem: History!
+            let request:NSFetchRequest<Alarm> = Alarm.fetchRequest()
+            do {
+                alarms = try persistentContainer.viewContext.fetch(request)
+            } catch {
+                print("Error load items ... \(error.localizedDescription)")
+            }
+            
+            for alarm in alarms {
+                if(alarm.alarmid == notifid){
+                    historyItem = History(context: persistentContainer.viewContext)
+                    historyItem.alarm = alarm
+                    historyItem.taken = true
+                    historyItem.medicinename = alarm.title
+                    historyItem.time = Date()
+                }
+            }
+            saveContext()
+        } else if(response.actionIdentifier == "SHOW"){
+            print("In show app delegate")
+        }
+        completionHandler()
+    }
 }
 
