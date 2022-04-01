@@ -26,6 +26,26 @@ class HistoryViewController: UIViewController {
         gradientLayer.colors = [UIColor.systemBlue.cgColor, UIColor.systemGray3.cgColor]
 
         view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        setPopupButton()
+    }
+    
+    func setPopupButton(){
+        let optionsClosure = {(action: UIAction) in
+            if(action.title == "Last 2 days"){
+                
+            } else if(action.title == "Last 5 days"){
+                
+            }else {
+                
+            }
+        }
+        sortbyBTN.menu = UIMenu(children: [UIAction(title: "Last 2 days", state: .on, handler: optionsClosure),
+            UIAction(title: "Last 5 days",handler: optionsClosure),
+            UIAction(title: "Last 7 days",handler: optionsClosure)])
+        sortbyBTN.showsMenuAsPrimaryAction = true
+        sortbyBTN.changesSelectionAsPrimaryAction = true
+        
     }
     
 
