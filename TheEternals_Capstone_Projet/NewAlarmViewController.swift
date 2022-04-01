@@ -188,6 +188,16 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     
     
     @IBAction func playBtnClicked(_ sender: UIButton) {
+        if playBtnLB.titleLabel?.text == "Play" {
+            playBtnLB.setTitle("Stop", for: .normal)
+            playBtnLB.setImage(UIImage(systemName: "stop.fill"), for: .normal)
+            setupPlayer()
+            player.play()
+        } else {
+            player.stop()
+            playBtnLB.setTitle("Play", for: .normal)
+            playBtnLB.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        }
     }
     
     
@@ -358,6 +368,18 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
             print("start recording")
         } catch {
             print("Error in recording \(error.localizedDescription)")
+        }
+    }
+    
+    func setupPlayer() {
+        let filename = getDocumentsDirectory().appendingPathComponent(audioFileName)
+        do {
+            player = try AVAudioPlayer(contentsOf: filename)
+            player.delegate = self
+            player.prepareToPlay()
+            player.volume = 1.0
+        } catch {
+            print(error)
         }
     }
     
