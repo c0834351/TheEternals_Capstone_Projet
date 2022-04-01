@@ -948,6 +948,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="c1b-Qr-kwr" secondAttribute="bottom" constant="5" id="sps-iU-QN6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="alarmtime" destination="SDZ-y6-LDD" id="64J-sI-SnD"/>
+                                            <outlet property="medicineName" destination="bFO-ec-R9R" id="Gu8-Lo-CLZ"/>
+                                            <outlet property="statusIndicator" destination="c1b-Qr-kwr" id="J8L-BO-KKd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

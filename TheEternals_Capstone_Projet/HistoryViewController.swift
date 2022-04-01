@@ -78,7 +78,18 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "historycell", for: indexPath) as! AlarmHistoryCell
-        
+        if(alarmhistory[indexPath.row].taken){
+            cell.statusIndicator.image = UIImage(systemName: "checkmark.circle.fill")
+        }
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "MMM d, h:mm a"
+        cell.medicineName.text = alarmhistory[indexPath.row].medicinename
+        cell.alarmtime.text = dateFormater.string(from: alarmhistory[indexPath.row].time!)
+        // add border and color
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
         return cell
     }
 }
