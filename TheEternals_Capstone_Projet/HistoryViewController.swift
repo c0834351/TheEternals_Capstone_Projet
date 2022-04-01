@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HistoryViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var sortbyBTN: UIButton!
     
     var alarmhistory = [History]()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,18 @@ class HistoryViewController: UIViewController {
         
     }
     
+    func gethistoryData(){
+        let request:NSFetchRequest<History> = History.fetchRequest()
+        do {
+            self.alarmhistory = try context.fetch(request)
+        } catch {
+            print("Error load items ... \(error.localizedDescription)")
+        }
+        
+        DispatchQueue.main.async{
+            self.historyTV.reloadData()
+        }
+    }
 
 }
 
