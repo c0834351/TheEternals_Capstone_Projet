@@ -47,7 +47,8 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         gradientLayer.colors = [UIColor.systemBlue.cgColor, UIColor.systemGray3.cgColor]
 
         view.layer.insertSublayer(gradientLayer, at: 0)
-        
+        getAlarms()
+        allAlarmsTV.reloadData()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(allalarms.count == 0){
@@ -73,7 +74,7 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cellimage = UIImage(data:imageData,scale:0.1)
         }
         }
-        //cell.delegate = self
+        cell.delegate = self
         cell.setCell(picture: cellimage ?? UIImage(), timeValue: celltime, afterFoodValue: allalarms[indexPath.row].whentotake ?? "", medicinesValue: allalarms[indexPath.row].title ?? "", enabledValue: allalarms[indexPath.row].enabled, alarmid: allalarms[indexPath.row].alarmid ?? "")
         return cell
     }

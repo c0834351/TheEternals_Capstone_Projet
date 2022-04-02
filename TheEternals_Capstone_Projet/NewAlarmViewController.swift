@@ -326,6 +326,57 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         }
     }
     
+    @IBAction func SundayClicked(_ sender: UIButton) {
+        sundayButton.backgroundColor = UIColor.systemGray
+        let day  = Repeatdays(context: self.context)
+        day.day = "Sunday"
+        day.parentalarm = newAlarm
+        repeatdays.append(day)
+    }
+    
+    @IBAction func MondayClicked(_ sender: UIButton) {
+        mondayButton.backgroundColor = UIColor.systemGray
+        let day  = Repeatdays(context: self.context)
+        day.day = "Monday"
+        day.parentalarm = newAlarm
+        repeatdays.append(day)
+    }
+    @IBAction func TuesdayClicked(_ sender: UIButton) {
+        TuesdayButton.backgroundColor = UIColor.systemGray
+        let day  = Repeatdays(context: self.context)
+        day.day = "Tuesday"
+        day.parentalarm = newAlarm
+        repeatdays.append(day)
+    }
+    @IBAction func WednesdayClicked(_ sender: UIButton) {
+        wednesdayButton.backgroundColor = UIColor.systemGray
+        let day  = Repeatdays(context: self.context)
+        day.day = "Wednesday"
+        day.parentalarm = newAlarm
+        repeatdays.append(day)
+    }
+    @IBAction func ThursdayClicked(_ sender: UIButton) {
+        thursdayButton.backgroundColor = UIColor.systemGray
+        let day  = Repeatdays(context: self.context)
+        day.day = "Thursday"
+        day.parentalarm = newAlarm
+        repeatdays.append(day)
+    }
+    @IBAction func FridayClicked(_ sender: UIButton) {
+        fridayButton.backgroundColor = UIColor.systemGray
+        let day  = Repeatdays(context: self.context)
+        day.day = "Friday"
+        day.parentalarm = newAlarm
+        repeatdays.append(day)
+    }
+    @IBAction func SaturdayClicked(_ sender: UIButton) {
+        saturdayButton.backgroundColor = UIColor.systemGray
+        let day  = Repeatdays(context: self.context)
+        day.day = "Saturday"
+        day.parentalarm = newAlarm
+        repeatdays.append(day)
+    }
+    
     func populateFields(){
         alarmTitle.text = alarmToEdit.title
         alarmTime.date = alarmToEdit.time!
