@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol alarmCellDelegate {
+    func didChangeSwitch(with id: String, enabled: Bool)
+}
+
 class AlarmCellTableViewCell: UITableViewCell {
     
+    var delegate: alarmCellDelegate?
     var alarmid: String!
 
     @IBOutlet weak var cardView: UIView!
@@ -18,6 +23,13 @@ class AlarmCellTableViewCell: UITableViewCell {
     @IBOutlet weak var medicines: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var medimage: UIImageView!
+    
+    
+    
+    @IBAction func alarmSwitchChanged(_ sender: UISwitch) {
+        delegate?.didChangeSwitch(with: alarmid, enabled: sender.isOn)
+    }
+    
     
     func setCell(picture: UIImage, timeValue: String, afterFoodValue: String, medicinesValue: String, enabledValue: Bool,  alarmid: String){
         self.alarmid = alarmid
