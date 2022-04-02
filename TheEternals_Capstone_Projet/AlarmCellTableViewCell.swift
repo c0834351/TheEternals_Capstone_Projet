@@ -8,6 +8,8 @@
 import UIKit
 
 class AlarmCellTableViewCell: UITableViewCell {
+    
+    var alarmid: String!
 
     @IBOutlet weak var cardView: UIView!
     
@@ -17,7 +19,8 @@ class AlarmCellTableViewCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var medimage: UIImageView!
     
-    func setCell(picture: UIImage, timeValue: String, afterFoodValue: String, medicinesValue: String, enabledValue: Bool){
+    func setCell(picture: UIImage, timeValue: String, afterFoodValue: String, medicinesValue: String, enabledValue: Bool,  alarmid: String){
+        self.alarmid = alarmid
         medimage.image = picture
         time.text = timeValue
         afterFood.text = afterFoodValue

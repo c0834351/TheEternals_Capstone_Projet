@@ -39,18 +39,22 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "alarmcell", for: indexPath) as! AlarmCellTableViewCell
-        if let imagedata = allalarms[indexPath.row].value(forKey: "image1") as? Data{
-            cellimage = UIImage(data: imagedata)
-        }
+        var cellimage:UIImage!
         var celltime:String = ""
+        let cell = tableView.dequeueReusableCell(withIdentifier: "alarmcell", for: indexPath) as! AlarmCellTableViewCell
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "hh:mm"
         if let v = allalarms[indexPath.row].time {
             celltime = timeFormatter.string(from: v)
         }
-        cell.setCell(picture: cellimage, timeValue: celltime, afterFoodValue: allalarms[indexPath.row].whentotake ?? "", medicinesValue: allalarms[indexPath.row].title ?? "", enabledValue: allalarms[indexPath.row].enabled)
+        let pics = allalarms[indexPath.row].pictures?.allObjects as! [Images]
+        if (pics.count > 0){
+        if let imageData = pics[0].image{
+            cellimage = UIImage(data:imageData,scale:0.1)
+        }
+        }
+        //cell.delegate = self
+        cell.setCell(picture: cellimage ?? UIImage(), timeValue: celltime, afterFoodValue: allalarms[indexPath.row].whentotake ?? "", medicinesValue: allalarms[indexPath.row].title ?? "", enabledValue: allalarms[indexPath.row].enabled, alarmid: allalarms[indexPath.row].alarmid ?? "")
         return cell
     }
     
