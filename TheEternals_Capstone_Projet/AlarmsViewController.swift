@@ -8,7 +8,27 @@
 import UIKit
 import CoreData
 
-class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, alarmCellDelegate {
+    func didChangeSwitch(with id: String, enabled: Bool) {
+        var curralarm: Alarm!
+        for alarm in allalarms{
+            if(alarm.alarmid == id){
+                curralarm = alarm
+                alarm.enabled = enabled
+            }
+        }
+        do {
+            try context.save()
+        } catch{
+            print("error updating alarm")
+        }
+        if (!enabled){
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+        } else {
+            CreateReminder(alarm: curralarm)
+        }
+    }
+    
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -76,6 +96,62 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } catch {
             print("Error load items ... \(error.localizedDescription)")
         }
+    }
+    
+    func CreateReminder(alarm: Alarm) {
+        var notificationimage: UIImage!
+        var alarmimages = [Images]()
+        DispatchQueue.main.async {
+        let content = UNMutableNotificationContent()
+        content.title = "MedAlarm Reminder"
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(alarm.audio ?? ""))
+        content.body = "Time to have \(alarm.title ?? "")"
+        alarmimages = alarm.pictures?.allObjects as! [Images]
+        if (!alarmimages.isEmpty){
+            notificationimage = self.resizeImage(image: UIImage(data: alarmimages[0].image!)!, targetSize: CGSize(width: 800, height: 800))
+        }
+        if let notifpic = notificationimage {
+            if let attachment = UNNotificationAttachment.create(identifier: alarm.title ?? "", image: notifpic, options: nil) {
+            content.attachments = [attachment]
+        }
+        }
+            let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: alarm.time!), repeats: false)
+            if let id = alarm.alarmid {
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
+            if(error != nil){
+                print(error?.localizedDescription ?? "")
+            }
+        })
+        }
+    }
+}
+    
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x:0, y:0, width: newSize.width, height: newSize.height)
+
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
     }
 
 }
