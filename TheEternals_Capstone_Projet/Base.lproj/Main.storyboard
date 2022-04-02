@@ -157,8 +157,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V3b-ED-1VS">
-                                <rect key="frame" x="16" y="109" width="382" height="372"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V3b-ED-1VS">
+                                <rect key="frame" x="16" y="109" width="382" height="433"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Steps to create a med reminder
 • Click on + button in home screen.
@@ -173,25 +173,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAv-3C-4dy">
-                                <rect key="frame" x="36" y="483" width="342" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="khF-e5-TNJ">
+                                <rect key="frame" x="16" y="527" width="382" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="8xM-Oh-4Ta"/>
+                                    <constraint firstAttribute="height" constant="1" id="nQ3-fa-CXw"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9js-RU-PuB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GAv-3C-4dy" firstAttribute="leading" secondItem="4yV-JI-suu" secondAttribute="leadingMargin" constant="16" id="4b1-m2-nj0"/>
                             <constraint firstItem="aim-OC-x64" firstAttribute="leading" secondItem="9js-RU-PuB" secondAttribute="leading" constant="16" id="9oa-bb-Xe9"/>
-                            <constraint firstItem="9js-RU-PuB" firstAttribute="bottom" secondItem="GAv-3C-4dy" secondAttribute="bottom" constant="329" id="UVP-4E-IWw"/>
+                            <constraint firstItem="9js-RU-PuB" firstAttribute="bottom" secondItem="khF-e5-TNJ" secondAttribute="bottom" constant="301" id="Eq9-qK-Yhm"/>
+                            <constraint firstItem="khF-e5-TNJ" firstAttribute="top" secondItem="V3b-ED-1VS" secondAttribute="bottom" constant="2" id="K4L-2D-j1n"/>
+                            <constraint firstItem="khF-e5-TNJ" firstAttribute="leading" secondItem="9js-RU-PuB" secondAttribute="leading" constant="16" id="K9f-bj-HxV"/>
                             <constraint firstItem="9js-RU-PuB" firstAttribute="trailing" secondItem="V3b-ED-1VS" secondAttribute="trailing" constant="16" id="dPN-xG-dLN"/>
                             <constraint firstItem="V3b-ED-1VS" firstAttribute="leading" secondItem="9js-RU-PuB" secondAttribute="leading" constant="16" id="k2H-PP-Zw2"/>
                             <constraint firstItem="aim-OC-x64" firstAttribute="top" secondItem="9js-RU-PuB" secondAttribute="top" constant="30" id="mko-fz-KEA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GAv-3C-4dy" secondAttribute="trailing" constant="16" id="qr0-JI-HX3"/>
-                            <constraint firstItem="GAv-3C-4dy" firstAttribute="top" secondItem="V3b-ED-1VS" secondAttribute="bottom" constant="2" id="xms-aa-8mU"/>
+                            <constraint firstItem="9js-RU-PuB" firstAttribute="trailing" secondItem="khF-e5-TNJ" secondAttribute="trailing" constant="16" id="pW0-cy-Hr4"/>
                             <constraint firstItem="V3b-ED-1VS" firstAttribute="top" secondItem="aim-OC-x64" secondAttribute="bottom" constant="5" id="zER-Pp-6Is"/>
                         </constraints>
                     </view>
@@ -1040,9 +1040,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
