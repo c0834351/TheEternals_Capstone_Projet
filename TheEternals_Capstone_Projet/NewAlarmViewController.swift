@@ -109,6 +109,16 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         weekdaysSVConstraint.constant = 0.0
         alarmToneHSHeightConstraint.constant = 0.0
         picturesHSHeightConstraint.constant = 0.0
+        
+        if(alarmToEdit == nil){
+        sundayButton.backgroundColor = .clear
+        mondayButton.backgroundColor = .clear
+        TuesdayButton.backgroundColor = .clear
+        wednesdayButton.backgroundColor = .clear
+        thursdayButton.backgroundColor = .clear
+        fridayButton.backgroundColor = .clear
+        saturdayButton.backgroundColor = .clear
+        }
 
         
         newAlarm = Alarm(context: self.context)
@@ -279,6 +289,51 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         newAlarm.enabled = true
         newAlarm.pictures = Set(alarmimages) as NSSet
         newAlarm.repeatdays = Set(repeatdays) as NSSet
+            if(repeatFlag.isOn){
+                if(sundayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Sunday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(mondayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Monday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(TuesdayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Tuesday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(wednesdayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Wednesday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(thursdayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Thursday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(fridayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Friday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(saturdayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Saturday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                newAlarm.repeatdays = Set(repeatdays) as NSSet
+            }
         self.saveData()
         completion?(newAlarm)
         } else {
@@ -289,6 +344,51 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
             alarmToEdit.repeatflag = repeatFlag.isOn
             alarmToEdit.pictures = Set(alarmimages) as NSSet
             alarmToEdit.repeatdays = Set(repeatdays) as NSSet
+            if(repeatFlag.isOn){
+                if(sundayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Sunday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(mondayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Monday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(TuesdayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Tuesday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(wednesdayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Wednesday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(thursdayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Thursday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(fridayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Friday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                if(saturdayButton.backgroundColor != .clear){
+                    let day  = Repeatdays(context: self.context)
+                    day.day = "Saturday"
+                    day.parentalarm = newAlarm
+                    repeatdays.append(day)
+                }
+                alarmToEdit.repeatdays = Set(repeatdays) as NSSet
+            }
             self.saveData()
             completion?(alarmToEdit)
         }
@@ -365,54 +465,54 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     }
     
     @IBAction func SundayClicked(_ sender: UIButton) {
-        sundayButton.backgroundColor = UIColor.systemGray
-        let day  = Repeatdays(context: self.context)
-        day.day = "Sunday"
-        day.parentalarm = newAlarm
-        repeatdays.append(day)
+        if(sender.backgroundColor != .clear){
+            sender.backgroundColor = .clear
+        } else {
+            sender.backgroundColor = UIColor.systemGray
+        }
     }
     
     @IBAction func MondayClicked(_ sender: UIButton) {
-        mondayButton.backgroundColor = UIColor.systemGray
-        let day  = Repeatdays(context: self.context)
-        day.day = "Monday"
-        day.parentalarm = newAlarm
-        repeatdays.append(day)
+        if(sender.backgroundColor != .clear){
+            sender.backgroundColor = .clear
+        } else {
+            sender.backgroundColor = UIColor.systemGray
+        }
     }
     @IBAction func TuesdayClicked(_ sender: UIButton) {
-        TuesdayButton.backgroundColor = UIColor.systemGray
-        let day  = Repeatdays(context: self.context)
-        day.day = "Tuesday"
-        day.parentalarm = newAlarm
-        repeatdays.append(day)
+        if(sender.backgroundColor != .clear){
+            sender.backgroundColor = .clear
+        } else {
+            sender.backgroundColor = UIColor.systemGray
+        }
     }
     @IBAction func WednesdayClicked(_ sender: UIButton) {
-        wednesdayButton.backgroundColor = UIColor.systemGray
-        let day  = Repeatdays(context: self.context)
-        day.day = "Wednesday"
-        day.parentalarm = newAlarm
-        repeatdays.append(day)
+        if(sender.backgroundColor != .clear){
+            sender.backgroundColor = .clear
+        } else {
+            sender.backgroundColor = UIColor.systemGray
+        }
     }
     @IBAction func ThursdayClicked(_ sender: UIButton) {
-        thursdayButton.backgroundColor = UIColor.systemGray
-        let day  = Repeatdays(context: self.context)
-        day.day = "Thursday"
-        day.parentalarm = newAlarm
-        repeatdays.append(day)
+        if(sender.backgroundColor != .clear){
+            sender.backgroundColor = .clear
+        } else {
+            sender.backgroundColor = UIColor.systemGray
+        }
     }
     @IBAction func FridayClicked(_ sender: UIButton) {
-        fridayButton.backgroundColor = UIColor.systemGray
-        let day  = Repeatdays(context: self.context)
-        day.day = "Friday"
-        day.parentalarm = newAlarm
-        repeatdays.append(day)
+        if(sender.backgroundColor != .clear){
+            sender.backgroundColor = .clear
+        } else {
+            sender.backgroundColor = UIColor.systemGray
+        }
     }
     @IBAction func SaturdayClicked(_ sender: UIButton) {
-        saturdayButton.backgroundColor = UIColor.systemGray
-        let day  = Repeatdays(context: self.context)
-        day.day = "Saturday"
-        day.parentalarm = newAlarm
-        repeatdays.append(day)
+        if(sender.backgroundColor != .clear){
+            sender.backgroundColor = .clear
+        } else {
+            sender.backgroundColor = UIColor.systemGray
+        }
     }
     
     func populateFields(){
