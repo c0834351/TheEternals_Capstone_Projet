@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		135355989CB8F4894538B0EF3595670B /* WhatsNewViewController+CompletionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C834AFF5D92781D7EA0C344A4490A /* WhatsNewViewController+CompletionButton.swift */; };
+		175D1B1AD249B3821A1A6D334FAEEFE9 /* WhatsNewViewController+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DABF4210B5C0A44FEB1AE3F8224A9D /* WhatsNewViewController+Theme.swift */; };
+		28FA59EF203563D72C657A6B2B4652A1 /* WhatsNewViewController+TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5213B24BC76E4FCDC1551BC8E9A4FC /* WhatsNewViewController+TitleView.swift */; };
+		2EE50201C5659ECAF50F6DCA48419015 /* Pods-TheEternals_Capstone_Projet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D061FF813E07803AF4E726DEA7D5DBCB /* Pods-TheEternals_Capstone_Projet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A8D68FF6CB9C65661A74FDB5BFB8B0 /* WhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C760E1BE05415107D40713B6C34D544 /* WhatsNewViewController.swift */; };
+		4DEDE0DFA06FC57E68DEB0747A4EEF6B /* WhatsNewViewController+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9C1F5B90E6B64623BE99984AB6AEF1 /* WhatsNewViewController+Configuration.swift */; };
+		53431658B2ED4BF916684D8EFB261AFF /* WhatsNew+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F974D5C8CE4122BB29B16C081592ACD /* WhatsNew+Version.swift */; };
+		550803E93DC5CD1B8353C900E5C22151 /* WhatsNewItemsViewController+Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95625489FECCBCBA343F3784E060E135 /* WhatsNewItemsViewController+Cell.swift */; };
+		56DE1FB5F36EEC6389397F1D3D6E487B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		5DB0481FE67160F29E54388D6A02E088 /* WhatsNewViewController+DetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596AAF6244DC3E8812E46A879370FCB /* WhatsNewViewController+DetailButton.swift */; };
+		62DF40A031A9C9ACD49407D7D19EA9D5 /* InMemoryWhatsNewVersionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB00D6A88257D423FDAEB4C388466F1 /* InMemoryWhatsNewVersionStore.swift */; };
+		6CA6CCF195736B78B1ED61A66157BBE4 /* UIView+MakeConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80CAEC0D9B3E09616804485B0B3047E /* UIView+MakeConstraints.swift */; };
+		78A2631E0236B8A5AB7C8C3779B8971E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		7F37027467D4403CA4FAE1941BB8563C /* WhatsNewViewController+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333641708768C21817394CDE871A01F5 /* WhatsNewViewController+Animation.swift */; };
+		82788FD329D7DCD4CCB1B2F5B6F1F4B6 /* WhatsNewButtonViewController+CompletionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B231B4AD63778E23C097DA6FE44B37 /* WhatsNewButtonViewController+CompletionButton.swift */; };
+		86AB88B437A27DC67D827810F72BCC0E /* WhatsNewKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD842CF7DD523F70223F44E0D5DAA0 /* WhatsNewKit-dummy.m */; };
+		8DAEA3C4AFED01FF750EB92A117BC62C /* WhatsNewTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E6A1BE71B3B1B9C520E0C9B98A9FD4 /* WhatsNewTitleViewController.swift */; };
+		9745D1EE549E85779C57B87671177288 /* WhatsNewViewController+HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE4A0E43D7036E98306925541A65E0C /* WhatsNewViewController+HapticFeedback.swift */; };
+		9F297F1FA6B83119C81FEB34DB9CA299 /* UIColor+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8564967A688B2ACC407C52AB6DEBB7 /* UIColor+Defaults.swift */; };
+		AC63AFFBC65E34D35CDC67F87001389E /* WhatsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF29B19CE20A6E5BD6EEA79E93BBEA7 /* WhatsNew.swift */; };
+		AC926AED3344593D0F4809FAD9A3E02E /* WhatsNewViewController+ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7EA17593F725481631BFEA4F3CEDE1 /* WhatsNewViewController+ItemsView.swift */; };
+		AE84E1BD09ED6D5203382E021D65C733 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED00776041F4D2F2396CCB989D7EFD19 /* Anchor.swift */; };
+		B159B4FB4FBAA549A713C037E6A5B7FE /* WhatsNew+Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882287EAE862DA898463A348D079A47A /* WhatsNew+Item.swift */; };
+		B2577A34735226765F030BA6F9C141B0 /* WhatsNewKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A270287412EF49A41841AF6A39FB2A62 /* WhatsNewKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B450F34FC2815A54061CF35B2A97E219 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24918E76C4F00C4AA9A8FA7FAA3D77B4 /* Disposable.swift */; };
+		BCBA2B75E8D83AA25B8C612DE08B9C3C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		C885AB46DD90010834E4DCC567891ADD /* WhatsNewButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AADF023657F4A37882C1CA75C1ED951 /* WhatsNewButtonViewController.swift */; };
+		CD267E84AF2D62E81C087EF89573BE9A /* WhatsNewItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B1A37FCC3507038B4CF787B95F376B /* WhatsNewItemsViewController.swift */; };
+		DA219CD6195F9C96E41C358075F6DAB5 /* WhatsNewVersionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50424F6CE32494224C3BF8A5AEF10F8D /* WhatsNewVersionStore.swift */; };
+		E1D791E0B9C39AC51C10AE32EDD67AB5 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE32D7CD77FD5ABADFA08A43A9A8454 /* DisposeBag.swift */; };
+		EA5581FBF04DDA49565B84D7A3E8E0F7 /* KeyValueWhatsNewVersionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35E1D188464D335BC9244440A0189B /* KeyValueWhatsNewVersionStore.swift */; };
+		ECAC9636122077547A74018768637561 /* WhatsNewButtonViewController+DetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9035B1FF05B94DFB4160C7B3AB8133 /* WhatsNewButtonViewController+DetailButton.swift */; };
+		F30568530ED3B5D0BB82D65BFB4271B8 /* Pods-TheEternals_Capstone_Projet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB73800CDD36BD7285F3717C33EF82B2 /* Pods-TheEternals_Capstone_Projet-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE8900C2CCAFEB33CD48B18263DED574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9704B189A5639F0B7534EC8872960E23;
+			remoteInfo = WhatsNewKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00CDD93D0F4CED08B1E63C94D3266B49 /* Pods_TheEternals_Capstone_Projet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TheEternals_Capstone_Projet.framework; path = "Pods-TheEternals_Capstone_Projet.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BE4A0E43D7036E98306925541A65E0C /* WhatsNewViewController+HapticFeedback.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewViewController+HapticFeedback.swift"; path = "Sources/Configuration/WhatsNewViewController+HapticFeedback.swift"; sourceTree = "<group>"; };
+		24918E76C4F00C4AA9A8FA7FAA3D77B4 /* Disposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disposable.swift; path = Sources/DataStructures/Disposable/Disposable.swift; sourceTree = "<group>"; };
+		29B231B4AD63778E23C097DA6FE44B37 /* WhatsNewButtonViewController+CompletionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewButtonViewController+CompletionButton.swift"; path = "Sources/Components/Buttons/WhatsNewButtonViewController+CompletionButton.swift"; sourceTree = "<group>"; };
+		2C760E1BE05415107D40713B6C34D544 /* WhatsNewViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhatsNewViewController.swift; path = Sources/WhatsNewViewController.swift; sourceTree = "<group>"; };
+		2C9C1F5B90E6B64623BE99984AB6AEF1 /* WhatsNewViewController+Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewViewController+Configuration.swift"; path = "Sources/Configuration/WhatsNewViewController+Configuration.swift"; sourceTree = "<group>"; };
+		333641708768C21817394CDE871A01F5 /* WhatsNewViewController+Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewViewController+Animation.swift"; path = "Sources/Configuration/WhatsNewViewController+Animation.swift"; sourceTree = "<group>"; };
+		35916A4BB3E3927337E8A3956CFF6418 /* Pods-TheEternals_Capstone_Projet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TheEternals_Capstone_Projet-Info.plist"; sourceTree = "<group>"; };
+		3A1C834AFF5D92781D7EA0C344A4490A /* WhatsNewViewController+CompletionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewViewController+CompletionButton.swift"; path = "Sources/Configuration/WhatsNewViewController+CompletionButton.swift"; sourceTree = "<group>"; };
+		3F974D5C8CE4122BB29B16C081592ACD /* WhatsNew+Version.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNew+Version.swift"; path = "Sources/Models/WhatsNew+Version.swift"; sourceTree = "<group>"; };
+		3FAD842CF7DD523F70223F44E0D5DAA0 /* WhatsNewKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WhatsNewKit-dummy.m"; sourceTree = "<group>"; };
+		3FEE202C61E846217500483D5FDB9E6D /* Pods-TheEternals_Capstone_Projet-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TheEternals_Capstone_Projet-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4A5213B24BC76E4FCDC1551BC8E9A4FC /* WhatsNewViewController+TitleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewViewController+TitleView.swift"; path = "Sources/Configuration/WhatsNewViewController+TitleView.swift"; sourceTree = "<group>"; };
+		4D35E1D188464D335BC9244440A0189B /* KeyValueWhatsNewVersionStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyValueWhatsNewVersionStore.swift; path = Sources/Store/KeyValueWhatsNewVersionStore.swift; sourceTree = "<group>"; };
+		503CCD62A0EB064FF9FB62837B392ABF /* Pods-TheEternals_Capstone_Projet-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TheEternals_Capstone_Projet-frameworks.sh"; sourceTree = "<group>"; };
+		50424F6CE32494224C3BF8A5AEF10F8D /* WhatsNewVersionStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhatsNewVersionStore.swift; path = Sources/Store/WhatsNewVersionStore.swift; sourceTree = "<group>"; };
+		51BE02C2BFF9EF7BCD90C7FDB5C67066 /* Pods-TheEternals_Capstone_Projet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TheEternals_Capstone_Projet.debug.xcconfig"; sourceTree = "<group>"; };
+		5B446B73D4E6CC537F6EF2B5E6F6FFBD /* WhatsNewKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WhatsNewKit-prefix.pch"; sourceTree = "<group>"; };
+		624D667EA33C3C9162DA6DE8D4BF904D /* WhatsNewKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WhatsNewKit.xcconfig; sourceTree = "<group>"; };
+		7A9485D5005ACFF057A3BFFBD0387F65 /* WhatsNewKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WhatsNewKit.framework; path = WhatsNewKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D8564967A688B2ACC407C52AB6DEBB7 /* UIColor+Defaults.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Defaults.swift"; path = "Sources/Extensions/UIColor+Defaults.swift"; sourceTree = "<group>"; };
+		87B1A37FCC3507038B4CF787B95F376B /* WhatsNewItemsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhatsNewItemsViewController.swift; path = Sources/Components/Items/WhatsNewItemsViewController.swift; sourceTree = "<group>"; };
+		882287EAE862DA898463A348D079A47A /* WhatsNew+Item.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNew+Item.swift"; path = "Sources/Models/WhatsNew+Item.swift"; sourceTree = "<group>"; };
+		95625489FECCBCBA343F3784E060E135 /* WhatsNewItemsViewController+Cell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewItemsViewController+Cell.swift"; path = "Sources/Components/Items/WhatsNewItemsViewController+Cell.swift"; sourceTree = "<group>"; };
+		9AADF023657F4A37882C1CA75C1ED951 /* WhatsNewButtonViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhatsNewButtonViewController.swift; path = Sources/Components/Buttons/WhatsNewButtonViewController.swift; sourceTree = "<group>"; };
+		9D9035B1FF05B94DFB4160C7B3AB8133 /* WhatsNewButtonViewController+DetailButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewButtonViewController+DetailButton.swift"; path = "Sources/Components/Buttons/WhatsNewButtonViewController+DetailButton.swift"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A270287412EF49A41841AF6A39FB2A62 /* WhatsNewKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WhatsNewKit-umbrella.h"; sourceTree = "<group>"; };
+		A314C666502FC3E26B279D8500DBB617 /* Pods-TheEternals_Capstone_Projet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TheEternals_Capstone_Projet.release.xcconfig"; sourceTree = "<group>"; };
+		A61E74D02723AA32DF627BF4AA0A0EBF /* Pods-TheEternals_Capstone_Projet-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TheEternals_Capstone_Projet-acknowledgements.plist"; sourceTree = "<group>"; };
+		A6DABF4210B5C0A44FEB1AE3F8224A9D /* WhatsNewViewController+Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewViewController+Theme.swift"; path = "Sources/Theme/WhatsNewViewController+Theme.swift"; sourceTree = "<group>"; };
+		A889C279FDCD07D2CA6F0F18BC4B94AF /* WhatsNewKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WhatsNewKit.modulemap; sourceTree = "<group>"; };
+		AB73800CDD36BD7285F3717C33EF82B2 /* Pods-TheEternals_Capstone_Projet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TheEternals_Capstone_Projet-dummy.m"; sourceTree = "<group>"; };
+		D061FF813E07803AF4E726DEA7D5DBCB /* Pods-TheEternals_Capstone_Projet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TheEternals_Capstone_Projet-umbrella.h"; sourceTree = "<group>"; };
+		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D2E6A1BE71B3B1B9C520E0C9B98A9FD4 /* WhatsNewTitleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhatsNewTitleViewController.swift; path = Sources/Components/Title/WhatsNewTitleViewController.swift; sourceTree = "<group>"; };
+		DEF29B19CE20A6E5BD6EEA79E93BBEA7 /* WhatsNew.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WhatsNew.swift; path = Sources/Models/WhatsNew.swift; sourceTree = "<group>"; };
+		E596AAF6244DC3E8812E46A879370FCB /* WhatsNewViewController+DetailButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewViewController+DetailButton.swift"; path = "Sources/Configuration/WhatsNewViewController+DetailButton.swift"; sourceTree = "<group>"; };
+		E80CAEC0D9B3E09616804485B0B3047E /* UIView+MakeConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+MakeConstraints.swift"; path = "Sources/Extensions/UIView+MakeConstraints.swift"; sourceTree = "<group>"; };
+		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		ECB00D6A88257D423FDAEB4C388466F1 /* InMemoryWhatsNewVersionStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InMemoryWhatsNewVersionStore.swift; path = Sources/Store/InMemoryWhatsNewVersionStore.swift; sourceTree = "<group>"; };
+		ED00776041F4D2F2396CCB989D7EFD19 /* Anchor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Anchor.swift; path = Sources/Extensions/Anchor.swift; sourceTree = "<group>"; };
+		EE7EA17593F725481631BFEA4F3CEDE1 /* WhatsNewViewController+ItemsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WhatsNewViewController+ItemsView.swift"; path = "Sources/Configuration/WhatsNewViewController+ItemsView.swift"; sourceTree = "<group>"; };
+		F838C0DE06B2A7B79B5F578400FF9803 /* Pods-TheEternals_Capstone_Projet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TheEternals_Capstone_Projet.modulemap"; sourceTree = "<group>"; };
+		FB3D75BE25F41BC67F3B5EAD8D76DDA5 /* WhatsNewKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WhatsNewKit-Info.plist"; sourceTree = "<group>"; };
+		FBE32D7CD77FD5ABADFA08A43A9A8454 /* DisposeBag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DisposeBag.swift; path = Sources/DataStructures/Disposable/DisposeBag.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		732A180AF6A3AC2C83BA63FD5E00675F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56DE1FB5F36EEC6389397F1D3D6E487B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B21B53B281DB063688059A9A9E773DB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78A2631E0236B8A5AB7C8C3779B8971E /* Foundation.framework in Frameworks */,
+				BCBA2B75E8D83AA25B8C612DE08B9C3C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CB8C12AF741931E2EC2EE3A5CAE34D0 /* WhatsNewKit */ = {
+			isa = PBXGroup;
+			children = (
+				ED00776041F4D2F2396CCB989D7EFD19 /* Anchor.swift */,
+				24918E76C4F00C4AA9A8FA7FAA3D77B4 /* Disposable.swift */,
+				FBE32D7CD77FD5ABADFA08A43A9A8454 /* DisposeBag.swift */,
+				ECB00D6A88257D423FDAEB4C388466F1 /* InMemoryWhatsNewVersionStore.swift */,
+				4D35E1D188464D335BC9244440A0189B /* KeyValueWhatsNewVersionStore.swift */,
+				7D8564967A688B2ACC407C52AB6DEBB7 /* UIColor+Defaults.swift */,
+				E80CAEC0D9B3E09616804485B0B3047E /* UIView+MakeConstraints.swift */,
+				DEF29B19CE20A6E5BD6EEA79E93BBEA7 /* WhatsNew.swift */,
+				882287EAE862DA898463A348D079A47A /* WhatsNew+Item.swift */,
+				3F974D5C8CE4122BB29B16C081592ACD /* WhatsNew+Version.swift */,
+				9AADF023657F4A37882C1CA75C1ED951 /* WhatsNewButtonViewController.swift */,
+				29B231B4AD63778E23C097DA6FE44B37 /* WhatsNewButtonViewController+CompletionButton.swift */,
+				9D9035B1FF05B94DFB4160C7B3AB8133 /* WhatsNewButtonViewController+DetailButton.swift */,
+				87B1A37FCC3507038B4CF787B95F376B /* WhatsNewItemsViewController.swift */,
+				95625489FECCBCBA343F3784E060E135 /* WhatsNewItemsViewController+Cell.swift */,
+				D2E6A1BE71B3B1B9C520E0C9B98A9FD4 /* WhatsNewTitleViewController.swift */,
+				50424F6CE32494224C3BF8A5AEF10F8D /* WhatsNewVersionStore.swift */,
+				2C760E1BE05415107D40713B6C34D544 /* WhatsNewViewController.swift */,
+				333641708768C21817394CDE871A01F5 /* WhatsNewViewController+Animation.swift */,
+				3A1C834AFF5D92781D7EA0C344A4490A /* WhatsNewViewController+CompletionButton.swift */,
+				2C9C1F5B90E6B64623BE99984AB6AEF1 /* WhatsNewViewController+Configuration.swift */,
+				E596AAF6244DC3E8812E46A879370FCB /* WhatsNewViewController+DetailButton.swift */,
+				0BE4A0E43D7036E98306925541A65E0C /* WhatsNewViewController+HapticFeedback.swift */,
+				EE7EA17593F725481631BFEA4F3CEDE1 /* WhatsNewViewController+ItemsView.swift */,
+				A6DABF4210B5C0A44FEB1AE3F8224A9D /* WhatsNewViewController+Theme.swift */,
+				4A5213B24BC76E4FCDC1551BC8E9A4FC /* WhatsNewViewController+TitleView.swift */,
+				66FF06C952CF8BDD093D36F60DAA5C77 /* Support Files */,
+			);
+			name = WhatsNewKit;
+			path = WhatsNewKit;
+			sourceTree = "<group>";
+		};
+		1611EE1718C7FFBC2F356B0797C35546 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00CDD93D0F4CED08B1E63C94D3266B49 /* Pods_TheEternals_Capstone_Projet.framework */,
+				7A9485D5005ACFF057A3BFFBD0387F65 /* WhatsNewKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
+				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		66FF06C952CF8BDD093D36F60DAA5C77 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A889C279FDCD07D2CA6F0F18BC4B94AF /* WhatsNewKit.modulemap */,
+				624D667EA33C3C9162DA6DE8D4BF904D /* WhatsNewKit.xcconfig */,
+				3FAD842CF7DD523F70223F44E0D5DAA0 /* WhatsNewKit-dummy.m */,
+				FB3D75BE25F41BC67F3B5EAD8D76DDA5 /* WhatsNewKit-Info.plist */,
+				5B446B73D4E6CC537F6EF2B5E6F6FFBD /* WhatsNewKit-prefix.pch */,
+				A270287412EF49A41841AF6A39FB2A62 /* WhatsNewKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/WhatsNewKit";
+			sourceTree = "<group>";
+		};
+		C755092132E0B6187133BF4BE330F27E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E5CE5EAE7A23EC64837BFE501A32627F /* Pods-TheEternals_Capstone_Projet */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				CFC5FF5483FBE4C9B86E9C9E858D9B6C /* Pods */,
+				1611EE1718C7FFBC2F356B0797C35546 /* Products */,
+				C755092132E0B6187133BF4BE330F27E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		CFC5FF5483FBE4C9B86E9C9E858D9B6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0CB8C12AF741931E2EC2EE3A5CAE34D0 /* WhatsNewKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E5CE5EAE7A23EC64837BFE501A32627F /* Pods-TheEternals_Capstone_Projet */ = {
+			isa = PBXGroup;
+			children = (
+				F838C0DE06B2A7B79B5F578400FF9803 /* Pods-TheEternals_Capstone_Projet.modulemap */,
+				3FEE202C61E846217500483D5FDB9E6D /* Pods-TheEternals_Capstone_Projet-acknowledgements.markdown */,
+				A61E74D02723AA32DF627BF4AA0A0EBF /* Pods-TheEternals_Capstone_Projet-acknowledgements.plist */,
+				AB73800CDD36BD7285F3717C33EF82B2 /* Pods-TheEternals_Capstone_Projet-dummy.m */,
+				503CCD62A0EB064FF9FB62837B392ABF /* Pods-TheEternals_Capstone_Projet-frameworks.sh */,
+				35916A4BB3E3927337E8A3956CFF6418 /* Pods-TheEternals_Capstone_Projet-Info.plist */,
+				D061FF813E07803AF4E726DEA7D5DBCB /* Pods-TheEternals_Capstone_Projet-umbrella.h */,
+				51BE02C2BFF9EF7BCD90C7FDB5C67066 /* Pods-TheEternals_Capstone_Projet.debug.xcconfig */,
+				A314C666502FC3E26B279D8500DBB617 /* Pods-TheEternals_Capstone_Projet.release.xcconfig */,
+			);
+			name = "Pods-TheEternals_Capstone_Projet";
+			path = "Target Support Files/Pods-TheEternals_Capstone_Projet";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5AD3B4AC85838635B4BC85C18B3B35B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2577A34735226765F030BA6F9C141B0 /* WhatsNewKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4B27F66E8C7DD639FA3057CE6CEBB15 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EE50201C5659ECAF50F6DCA48419015 /* Pods-TheEternals_Capstone_Projet-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		008F42EE63DC539CC6D0BB2CAD265026 /* Pods-TheEternals_Capstone_Projet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DA91C99725039A0A9405C457C1E4C2F /* Build configuration list for PBXNativeTarget "Pods-TheEternals_Capstone_Projet" */;
+			buildPhases = (
+				D4B27F66E8C7DD639FA3057CE6CEBB15 /* Headers */,
+				A9451304DA968902A692CFC0EAF7E84A /* Sources */,
+				732A180AF6A3AC2C83BA63FD5E00675F /* Frameworks */,
+				61B4B3EEAA98C527BB095C70CD51F96B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCBCEE65EE41157116FE2877D9CE7B7E /* PBXTargetDependency */,
+			);
+			name = "Pods-TheEternals_Capstone_Projet";
+			productName = "Pods-TheEternals_Capstone_Projet";
+			productReference = 00CDD93D0F4CED08B1E63C94D3266B49 /* Pods_TheEternals_Capstone_Projet.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9704B189A5639F0B7534EC8872960E23 /* WhatsNewKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AC60B2F02EAF378F61A16797A5EA32C /* Build configuration list for PBXNativeTarget "WhatsNewKit" */;
+			buildPhases = (
+				5AD3B4AC85838635B4BC85C18B3B35B6 /* Headers */,
+				C42CE5E22EFDEF86ABC2CEA15DC110F3 /* Sources */,
+				B21B53B281DB063688059A9A9E773DB5 /* Frameworks */,
+				5E436503C5154E049DC0E322C45C8B90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhatsNewKit;
+			productName = WhatsNewKit;
+			productReference = 7A9485D5005ACFF057A3BFFBD0387F65 /* WhatsNewKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 1611EE1718C7FFBC2F356B0797C35546 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				008F42EE63DC539CC6D0BB2CAD265026 /* Pods-TheEternals_Capstone_Projet */,
+				9704B189A5639F0B7534EC8872960E23 /* WhatsNewKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5E436503C5154E049DC0E322C45C8B90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61B4B3EEAA98C527BB095C70CD51F96B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9451304DA968902A692CFC0EAF7E84A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F30568530ED3B5D0BB82D65BFB4271B8 /* Pods-TheEternals_Capstone_Projet-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C42CE5E22EFDEF86ABC2CEA15DC110F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE84E1BD09ED6D5203382E021D65C733 /* Anchor.swift in Sources */,
+				B450F34FC2815A54061CF35B2A97E219 /* Disposable.swift in Sources */,
+				E1D791E0B9C39AC51C10AE32EDD67AB5 /* DisposeBag.swift in Sources */,
+				62DF40A031A9C9ACD49407D7D19EA9D5 /* InMemoryWhatsNewVersionStore.swift in Sources */,
+				EA5581FBF04DDA49565B84D7A3E8E0F7 /* KeyValueWhatsNewVersionStore.swift in Sources */,
+				9F297F1FA6B83119C81FEB34DB9CA299 /* UIColor+Defaults.swift in Sources */,
+				6CA6CCF195736B78B1ED61A66157BBE4 /* UIView+MakeConstraints.swift in Sources */,
+				AC63AFFBC65E34D35CDC67F87001389E /* WhatsNew.swift in Sources */,
+				B159B4FB4FBAA549A713C037E6A5B7FE /* WhatsNew+Item.swift in Sources */,
+				53431658B2ED4BF916684D8EFB261AFF /* WhatsNew+Version.swift in Sources */,
+				C885AB46DD90010834E4DCC567891ADD /* WhatsNewButtonViewController.swift in Sources */,
+				82788FD329D7DCD4CCB1B2F5B6F1F4B6 /* WhatsNewButtonViewController+CompletionButton.swift in Sources */,
+				ECAC9636122077547A74018768637561 /* WhatsNewButtonViewController+DetailButton.swift in Sources */,
+				CD267E84AF2D62E81C087EF89573BE9A /* WhatsNewItemsViewController.swift in Sources */,
+				550803E93DC5CD1B8353C900E5C22151 /* WhatsNewItemsViewController+Cell.swift in Sources */,
+				86AB88B437A27DC67D827810F72BCC0E /* WhatsNewKit-dummy.m in Sources */,
+				8DAEA3C4AFED01FF750EB92A117BC62C /* WhatsNewTitleViewController.swift in Sources */,
+				DA219CD6195F9C96E41C358075F6DAB5 /* WhatsNewVersionStore.swift in Sources */,
+				43A8D68FF6CB9C65661A74FDB5BFB8B0 /* WhatsNewViewController.swift in Sources */,
+				7F37027467D4403CA4FAE1941BB8563C /* WhatsNewViewController+Animation.swift in Sources */,
+				135355989CB8F4894538B0EF3595670B /* WhatsNewViewController+CompletionButton.swift in Sources */,
+				4DEDE0DFA06FC57E68DEB0747A4EEF6B /* WhatsNewViewController+Configuration.swift in Sources */,
+				5DB0481FE67160F29E54388D6A02E088 /* WhatsNewViewController+DetailButton.swift in Sources */,
+				9745D1EE549E85779C57B87671177288 /* WhatsNewViewController+HapticFeedback.swift in Sources */,
+				AC926AED3344593D0F4809FAD9A3E02E /* WhatsNewViewController+ItemsView.swift in Sources */,
+				175D1B1AD249B3821A1A6D334FAEEFE9 /* WhatsNewViewController+Theme.swift in Sources */,
+				28FA59EF203563D72C657A6B2B4652A1 /* WhatsNewViewController+TitleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCBCEE65EE41157116FE2877D9CE7B7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WhatsNewKit;
+			target = 9704B189A5639F0B7534EC8872960E23 /* WhatsNewKit */;
+			targetProxy = EE8900C2CCAFEB33CD48B18263DED574 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0EB78948398F70E6E0EEC1B92476859B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		2ABE86738D88DFB8CC0A5257EEEDF4EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 624D667EA33C3C9162DA6DE8D4BF904D /* WhatsNewKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WhatsNewKit/WhatsNewKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WhatsNewKit/WhatsNewKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/WhatsNewKit/WhatsNewKit.modulemap";
+				PRODUCT_MODULE_NAME = WhatsNewKit;
+				PRODUCT_NAME = WhatsNewKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3017D38DCC5A5EBA61D96AA6E531ECE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51BE02C2BFF9EF7BCD90C7FDB5C67066 /* Pods-TheEternals_Capstone_Projet.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TheEternals_Capstone_Projet/Pods-TheEternals_Capstone_Projet-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TheEternals_Capstone_Projet/Pods-TheEternals_Capstone_Projet.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		417B4CA9462E0FFAE57DAE61B1C2DDFA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A314C666502FC3E26B279D8500DBB617 /* Pods-TheEternals_Capstone_Projet.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TheEternals_Capstone_Projet/Pods-TheEternals_Capstone_Projet-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TheEternals_Capstone_Projet/Pods-TheEternals_Capstone_Projet.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7290392BDDDC8699D9F13E731E8A9A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		93C8779E2BC041D9A965808F703EED31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 624D667EA33C3C9162DA6DE8D4BF904D /* WhatsNewKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WhatsNewKit/WhatsNewKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WhatsNewKit/WhatsNewKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/WhatsNewKit/WhatsNewKit.modulemap";
+				PRODUCT_MODULE_NAME = WhatsNewKit;
+				PRODUCT_NAME = WhatsNewKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AC60B2F02EAF378F61A16797A5EA32C /* Build configuration list for PBXNativeTarget "WhatsNewKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93C8779E2BC041D9A965808F703EED31 /* Debug */,
+				2ABE86738D88DFB8CC0A5257EEEDF4EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DA91C99725039A0A9405C457C1E4C2F /* Build configuration list for PBXNativeTarget "Pods-TheEternals_Capstone_Projet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3017D38DCC5A5EBA61D96AA6E531ECE9 /* Debug */,
+				417B4CA9462E0FFAE57DAE61B1C2DDFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7290392BDDDC8699D9F13E731E8A9A4E /* Debug */,
+				0EB78948398F70E6E0EEC1B92476859B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

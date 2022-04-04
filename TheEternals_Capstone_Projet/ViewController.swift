@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import WhatsNewKit
 
 class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource, todayCellDelegate  {
     
@@ -90,7 +91,6 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         floatingAddButton.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
         
         getUpcomingAlarms()
-        NotificationCenter.default.addObserver(self, selector: #selector(alarmCreated), name: Notification.Name("alarm created"), object: nil)
     }
     
     @objc func alarmCreated() {
@@ -135,7 +135,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         }
         }
         cell.delegate = self
-        cell.setCell(picture: cellimage ?? UIImage(), timeValue: celltime, afterFoodValue: upcomingalarms[indexPath.row].whentotake ?? "", medicinesValue: upcomingalarms[indexPath.row].title ?? "", enabledValue: upcomingalarms[indexPath.row].enabled)
+        cell.setCell(picture: cellimage ?? UIImage(), timeValue: celltime, afterFoodValue: upcomingalarms[indexPath.row].whentotake ?? "", medicinesValue: upcomingalarms[indexPath.row].title ?? "", enabledValue: upcomingalarms[indexPath.row].enabled, alarmid: upcomingalarms[indexPath.row].alarmid ?? "")
         return cell
     }
     
