@@ -66,8 +66,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     private var repeatdays = [Repeatdays]()
     private var newAlarm: Alarm!
     private var notificationpermissiongranted: Bool = false
-    public var completion: ((Bool) -> Void)?
-
+    public var completion: ((Alarm) -> Void)?
 
     var alarms = [Alarm]()
 
@@ -244,9 +243,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         newAlarm.pictures = Set(alarmimages) as NSSet
         newAlarm.repeatdays = Set(repeatdays) as NSSet
         self.saveData()
-        NotificationCenter.default.post(name: Notification.Name("alarm created"), object: nil)
-        completion?(true)
-        self.dismiss(animated: true, completion: nil)
+        completion?(newAlarm)
         } else {
             alarmToEdit.title = alarmTitle.text
             alarmToEdit.startdate = startDate.date
@@ -256,11 +253,13 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
             alarmToEdit.pictures = Set(alarmimages) as NSSet
             alarmToEdit.repeatdays = Set(repeatdays) as NSSet
             self.saveData()
+            completion?(alarmToEdit)
         }
     }
     
     
     @IBAction func didTapCancel() {
+        if(alarmToEdit == nil) {
         self.context.delete(newAlarm)
         do {
             try self.context.save()
@@ -268,7 +267,9 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         }catch{
             print("Error deleting record")
         }
-        self.dismiss(animated: true, completion: nil)
+    }
+        navigationController?.popToRootViewController(animated: true)
+        //self.dismiss(animated: true, completion: nil)
     }
     
     

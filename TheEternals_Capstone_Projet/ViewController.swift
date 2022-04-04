@@ -153,27 +153,26 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "add") as? NewAlarmViewController else {
             return
         }
-        let navigationController = UINavigationController(rootViewController: vc)
         vc.alarmToEdit = upcomingalarms[indexPath.row]
-        navigationController.modalPresentationStyle = .fullScreen
-        self.present(navigationController, animated: true, completion: nil)
+        vc.completion = { createdalarm in
+                self.navigationController?.popToRootViewController(animated: true)
+                self.todayAlarmsTV.reloadData()
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func didTapAdd() {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "add") as? NewAlarmViewController else {
             return
         }
-        let navigationController = UINavigationController(rootViewController: vc)
-        vc.completion = { created in
-            if(created){
-                    self.viewDidAppear(true)
-                    self.todayAlarmsTV.reloadData()
-            }
+        //navigationController.modalPresentationStyle = .fullScreen
+        vc.completion = { createdalarm in
+                self.navigationController?.popToRootViewController(animated: true)
+                self.getUpcomingAlarms()
+                self.todayAlarmsTV.reloadData()
         }
-        navigationController.modalPresentationStyle = .fullScreen
-        self.present(navigationController, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
-    
     func getUpcomingAlarms(){
         let request:NSFetchRequest<Alarm> = Alarm.fetchRequest()
         do {
