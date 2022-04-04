@@ -8,7 +8,27 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource  {
+class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource, todayCellDelegate  {
+    
+    func didChangeSwitch(with id: String, enabled: Bool) {
+        var curralarm: Alarm!
+        for alarm in allalarms{
+            if(alarm.alarmid == id){
+                curralarm = alarm
+                alarm.enabled = enabled
+            }
+        }
+        do {
+            try context.save()
+        } catch{
+            print("error updating alarm")
+        }
+        if (!enabled){
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+        } else {
+            //CreateReminder(alarm: curralarm)
+        }
+    }
     
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -114,6 +134,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             cellimage = UIImage(data:imageData,scale:0.1)
         }
         }
+        cell.delegate = self
         cell.setCell(picture: cellimage ?? UIImage(), timeValue: celltime, afterFoodValue: upcomingalarms[indexPath.row].whentotake ?? "", medicinesValue: upcomingalarms[indexPath.row].title ?? "", enabledValue: upcomingalarms[indexPath.row].enabled)
         return cell
     }

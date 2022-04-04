@@ -339,7 +339,7 @@
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6oJ-Gs-Xql">
                                                             <rect key="frame" x="284" y="20" width="51" height="31"/>
                                                             <connections>
-                                                                <action selector="alarmSwitchTapped:" destination="fxk-ZY-MSu" eventType="valueChanged" id="yuh-La-ncL"/>
+                                                                <action selector="alarmSwitchTapped:" destination="fxk-ZY-MSu" eventType="valueChanged" id="L8X-QT-iz7"/>
                                                             </connections>
                                                         </switch>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jH-hX-SuV">

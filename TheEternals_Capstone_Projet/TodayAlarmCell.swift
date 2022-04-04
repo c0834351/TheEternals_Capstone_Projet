@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol todayCellDelegate {
+    func didChangeSwitch(with id: String, enabled: Bool)
+}
+
 class TodayAlarmCell: UITableViewCell {
+    
+    var delegate: todayCellDelegate?
+    var alarmid: String!
 
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var medimage: UIImageView!
@@ -20,7 +27,13 @@ class TodayAlarmCell: UITableViewCell {
     
     @IBOutlet weak var enabled: UISwitch!
     
+    @IBAction func alarmSwitchTapped(_ sender: UISwitch) {
+        delegate?.didChangeSwitch(with: alarmid, enabled: sender.isOn)
+    }
+    
+    
     func setCell(picture: UIImage, timeValue: String, afterFoodValue: String, medicinesValue: String, enabledValue: Bool){
+        self.alarmid = alarmid
         medimage.image = picture
         time.text = timeValue
         afterFood.text = afterFoodValue
