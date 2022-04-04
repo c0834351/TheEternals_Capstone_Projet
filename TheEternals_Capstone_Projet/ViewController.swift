@@ -99,6 +99,16 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        let items = WhatsNew(title: "MedAlarm",
+                             items:[WhatsNew.Item(title: "Never miss your pills", subtitle: "No need to remember your medicines now, Give it to us", image: UIImage(systemName: "pills.fill")),
+                                    WhatsNew.Item(title: "Create reminders", subtitle: "Setup once and we will remind you for the whole period", image: UIImage(systemName: "alarm.fill")),
+                                    WhatsNew.Item(title: "Listen", subtitle: "Record the medicine name once and you need not remember it ever", image: UIImage(systemName: "ear.fill")),
+                                    WhatsNew.Item(title: "Pictures", subtitle: "Attach pictures of the medicine and you can see them when it's time", image: UIImage(systemName: "photo.fill"))
+                                   ] )
+        guard let vc = WhatsNewViewController(whatsNew: items, versionStore: KeyValueWhatsNewVersionStore()) else {
+            return
+        }
+        present(vc, animated: true)
         todayAlarmsTV.reloadData()
     }
     
