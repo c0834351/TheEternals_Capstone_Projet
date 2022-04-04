@@ -174,6 +174,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         navigationController?.pushViewController(vc, animated: true)
     }
     func getUpcomingAlarms(){
+        upcomingalarms.removeAll()
         let request:NSFetchRequest<Alarm> = Alarm.fetchRequest()
         do {
             self.allalarms = try context.fetch(request)
@@ -185,11 +186,12 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             let timeFormatter = DateFormatter()
             timeFormatter.dateFormat = "hh:mm a"
             let now = Date()
-            if let alarmtime = alarm.time, alarmtime >= now {
+            if let alarmtime = alarm.time, alarmtime >= now,
+               let startdate = alarm.startdate, startdate <= now,
+               let enddate = alarm.enddate, enddate <= now{
                 upcomingalarms.append(alarm)
             }
         }
-        todayAlarmsTV.reloadData()
         
     }
     

@@ -79,15 +79,30 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete"){(action, view, completionHandler) in
+            let alarmtoRemove = self.allalarms[indexPath.row]
+            self.context.delete(alarmtoRemove)
+            do {
+                try self.context.save()
+            }catch{
+                print("Error deleting record")
+            }
+            self.getAlarms()
+        }
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "add") as? NewAlarmViewController else {
             return
         }
-        let navigationController = UINavigationController(rootViewController: vc)
-        navigationController.modalPresentationStyle = .fullScreen
+        vc.completion = { createdalarm in
+            self.navigationController?.popToRootViewController(animated: true)
+            self.allAlarmsTV.reloadData()
+        }
         vc.alarmToEdit = allalarms[indexPath.row]
-        self.present(navigationController, animated: true, completion: nil)
-        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func getAlarms(){
@@ -96,6 +111,13 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.allalarms = try context.fetch(request)
         } catch {
             print("Error load items ... \(error.localizedDescription)")
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.allAlarmsTV.reloadData()
         }
     }
     

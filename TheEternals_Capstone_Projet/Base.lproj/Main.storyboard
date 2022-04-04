@@ -21,8 +21,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="fXG-63-F7B" kind="relationship" relationship="viewControllers" id="U1a-2F-mcz"/>
-                        <segue destination="ngo-Tp-vFr" kind="relationship" relationship="viewControllers" id="Whh-1L-e7t"/>
-                        <segue destination="PPR-bZ-bkr" kind="relationship" relationship="viewControllers" id="JKj-PW-WgF"/>
+                        <segue destination="FxD-FC-oX3" kind="relationship" relationship="viewControllers" id="Whh-1L-e7t"/>
+                        <segue destination="PCY-Mp-hcb" kind="relationship" relationship="viewControllers" id="JKj-PW-WgF"/>
                         <segue destination="IBW-xD-zCT" kind="relationship" relationship="viewControllers" id="bRH-g0-5ac"/>
                     </connections>
                 </tabBarController>
@@ -39,13 +39,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSw-iO-TBP">
-                                <rect key="frame" x="16" y="64" width="96" height="33.666666666666657"/>
+                                <rect key="frame" x="16" y="108" width="96" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3tv-tu-4Sm">
-                                <rect key="frame" x="16" y="107.66666666666667" width="100" height="30.000000000000014"/>
+                                <rect key="frame" x="16" y="151.66666666666666" width="100" height="30"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="qlY-qt-F3T"/>
@@ -60,7 +60,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4o5-h4-O4q">
-                                <rect key="frame" x="16" y="147.66666666666669" width="358" height="603.33333333333326"/>
+                                <rect key="frame" x="16" y="191.66666666666669" width="358" height="559.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="historycell" id="j25-yb-WQZ" customClass="AlarmHistoryCell" customModule="TheEternals_Capstone_Projet" customModuleProvider="target">
@@ -124,9 +124,7 @@
                             <constraint firstItem="3tv-tu-4Sm" firstAttribute="top" secondItem="fSw-iO-TBP" secondAttribute="bottom" constant="10" id="yC6-MV-7U9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="Dx5-9i-tm7">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="jqM-eb-jSr"/>
                     <connections>
                         <outlet property="historyTV" destination="4o5-h4-O4q" id="btm-hJ-cj7"/>
                         <outlet property="sortbyBTN" destination="3tv-tu-4Sm" id="sou-ie-T0e"/>
@@ -134,9 +132,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RY6-AY-zVl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896.92307692307691" y="-288.62559241706163"/>
+            <point key="canvasLocation" x="2755.3846153846152" y="-288.62559241706163"/>
         </scene>
-        <!--Alarms-->
+        <!--Alarms View Controller-->
         <scene sceneID="SNj-Tv-BzA">
             <objects>
                 <viewController storyboardIdentifier="todayalarms" id="ngo-Tp-vFr" customClass="AlarmsViewController" customModule="TheEternals_Capstone_Projet" customModuleProvider="target" sceneMemberID="viewController">
@@ -145,7 +143,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Alarms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0P-Fi-awd">
-                                <rect key="frame" x="16" y="74" width="119" height="30"/>
+                                <rect key="frame" x="16" y="118" width="119" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -158,7 +156,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IlA-HJ-38d">
-                                <rect key="frame" x="16" y="180" width="358" height="569"/>
+                                <rect key="frame" x="16" y="224" width="358" height="525"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -258,9 +256,7 @@
                             <constraint firstItem="q0P-Fi-awd" firstAttribute="top" secondItem="bAX-8Y-LOh" secondAttribute="top" constant="30" id="tdl-Nu-6Vz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Alarms" image="alarm" catalog="system" selectedImage="alarm" id="iai-se-Tzo">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="UCe-Pz-tQk"/>
                     <connections>
                         <outlet property="allAlarmsTV" destination="IlA-HJ-38d" id="oxD-MO-DPI"/>
                         <outlet property="searchBar" destination="e2G-nH-kVa" id="zLs-rJ-b2h"/>
@@ -268,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeJ-pF-lFq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73.84615384615384" y="-289.33649289099526"/>
+            <point key="canvasLocation" x="1003.0769230769231" y="-289.33649289099526"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Foe-65-yNA">
@@ -487,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCb-oe-lYv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="-289.33649289099526"/>
+            <point key="canvasLocation" x="3538.4615384615386" y="-289.33649289099526"/>
         </scene>
         <!--New Reminder-->
         <scene sceneID="th8-cN-RjY">
@@ -1043,6 +1039,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKm-bu-eCz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1700" y="-289.33649289099526"/>
+        </scene>
+        <!--Alarms-->
+        <scene sceneID="9kv-8b-5LL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FxD-FC-oX3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Alarms" image="alarm" catalog="system" selectedImage="alarm" id="iai-se-Tzo">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bey-Sm-2PS">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ngo-Tp-vFr" kind="relationship" relationship="rootViewController" id="Il8-Or-YL5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mYT-3r-LOt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.84615384615384" y="-289.33649289099526"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JOG-K7-cAk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PCY-Mp-hcb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="Dx5-9i-tm7">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pca-r6-X5Q">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PPR-bZ-bkr" kind="relationship" relationship="rootViewController" id="bcZ-9y-72E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xY3-1f-3e8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1826.1538461538462" y="-288.62559241706163"/>
         </scene>
     </scenes>
     <resources>
