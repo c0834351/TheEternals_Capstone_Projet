@@ -32,7 +32,7 @@ class TodayAlarmCell: UITableViewCell {
     }
     
     
-    func setCell(picture: UIImage, timeValue: String, afterFoodValue: String, medicinesValue: String, enabledValue: Bool){
+    func setCell(picture: UIImage, timeValue: String, afterFoodValue: String, medicinesValue: String, enabledValue: Bool, alarmid: String){
         self.alarmid = alarmid
         medimage.image = picture
         time.text = timeValue
