@@ -106,9 +106,14 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
                     historyItem.taken = true
                     historyItem.medicinename = alarm.title
                     historyItem.time = Date()
+                    
+                    if(alarm.snoozeflag == true){
+                        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notifid + "snooze1", notifid + "snooze2", notifid + "snooze3", notifid + "snooze4"])
+                    }
                 }
             }
             saveContext()
+            exit(0)
         } else if(response.actionIdentifier == "SHOW"){
             print("In show app delegate")
         }
