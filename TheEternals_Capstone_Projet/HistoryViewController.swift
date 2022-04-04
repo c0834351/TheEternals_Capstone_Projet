@@ -22,7 +22,6 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "History"
         // Do any additional setup after loading the view.
     
         let gradientLayer = CAGradientLayer()

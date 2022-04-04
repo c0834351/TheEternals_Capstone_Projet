@@ -121,7 +121,9 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         }
 
         
+        if (alarmToEdit == nil){
         newAlarm = Alarm(context: self.context)
+        }
         startDate.minimumDate = Date()
         endDate.minimumDate = Date()
         datesVStackview.layer.cornerRadius = 8
@@ -337,6 +339,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         self.saveData()
         completion?(newAlarm)
         } else {
+            alarmToEdit.time = alarmTime.date
             alarmToEdit.title = alarmTitle.text
             alarmToEdit.startdate = startDate.date
             alarmToEdit.enddate = endDate.date
