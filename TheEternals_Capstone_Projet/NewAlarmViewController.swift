@@ -120,7 +120,11 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     
     
     @IBAction func repeatFlagIsON(_ sender: UISwitch) {
+        if(alarmToEdit != nil){
+            alarmToEdit.repeatflag = repeatFlag.isOn
+        } else {
         newAlarm.repeatflag = repeatFlag.isOn
+        }
         if (repeatFlag.isOn){
             let bIsHidden = weekdaysStackView.isHidden
 
@@ -419,6 +423,43 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         repeatFlag.setOn(alarmToEdit.repeatflag, animated: true)
         snoozeSwitch.setOn(alarmToEdit.snoozeflag, animated: true)
         alarmimages = alarmToEdit.pictures?.allObjects as! [Images]
+        if(alarmToEdit.repeatflag){
+            let bIsHidden = weekdaysStackView.isHidden
+
+            if bIsHidden {
+                weekdaysStackView.isHidden = false
+            }
+
+            UIView.animate(withDuration: 0.3, animations: {
+                self.weekdaysSVConstraint.constant = self.weekdaysSVConstraint.constant > 0 ? 0 : self.defaultWeekdaysSVheight
+                self.view.layoutIfNeeded()
+            })
+        }
+        if let alarmtoeditrepeatdays = alarmToEdit.repeatdays?.allObjects as? [Repeatdays], alarmtoeditrepeatdays.count>0{
+            for weekday in alarmtoeditrepeatdays{
+                if(weekday.day == "Sunday"){
+                    sundayButton.backgroundColor = UIColor.systemGray
+                }
+                if(weekday.day == "Monday"){
+                    mondayButton.backgroundColor = UIColor.systemGray
+                }
+                if(weekday.day == "Tuesday"){
+                    TuesdayButton.backgroundColor = UIColor.systemGray
+                }
+                if(weekday.day == "Wednesday"){
+                    wednesdayButton.backgroundColor = UIColor.systemGray
+                }
+                if(weekday.day == "Thursday"){
+                    thursdayButton.backgroundColor = UIColor.systemGray
+                }
+                if(weekday.day == "Friday"){
+                    fridayButton.backgroundColor = UIColor.systemGray
+                }
+                if(weekday.day == "Saturday"){
+                    saturdayButton.backgroundColor = UIColor.systemGray
+                }
+            }
+        }
     }
     
     private func getDocumentsDirectory() -> URL {
@@ -541,8 +582,38 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
                                                intentIdentifiers: [],
                                                options: [])
             self.notificationCenter.setNotificationCategories([medreminderCategory])
-            let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.alarmTime.date), repeats: self.repeatFlag.isOn)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self.alarmTime.date), repeats: self.repeatFlag.isOn)
             if let id = alarm.alarmid {
+                if(alarm.snoozeflag){
+                    let trigger1 = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self.alarmTime.date.addingTimeInterval(300)), repeats: self.repeatFlag.isOn)
+                    let request1 = UNNotificationRequest(identifier: id + "snooze1", content: content, trigger: trigger1)
+                        self.notificationCenter.add(request1, withCompletionHandler: {error in
+                        if(error != nil){
+                            print(error?.localizedDescription ?? "")
+                        }
+                    })
+                    let trigger2 = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self.alarmTime.date.addingTimeInterval(600)), repeats: self.repeatFlag.isOn)
+                    let request2 = UNNotificationRequest(identifier: id + "snooze2", content: content, trigger: trigger2)
+                        self.notificationCenter.add(request2, withCompletionHandler: {error in
+                        if(error != nil){
+                            print(error?.localizedDescription ?? "")
+                        }
+                    })
+                    let trigger3 = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self.alarmTime.date.addingTimeInterval(900)), repeats: self.repeatFlag.isOn)
+                    let request3 = UNNotificationRequest(identifier: id + "snooze3", content: content, trigger: trigger3)
+                        self.notificationCenter.add(request3, withCompletionHandler: {error in
+                        if(error != nil){
+                            print(error?.localizedDescription ?? "")
+                        }
+                    })
+                    let trigger4 = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self.alarmTime.date.addingTimeInterval(1200)), repeats: self.repeatFlag.isOn)
+                    let request4 = UNNotificationRequest(identifier: id + "snooze4", content: content, trigger: trigger4)
+                        self.notificationCenter.add(request4, withCompletionHandler: {error in
+                        if(error != nil){
+                            print(error?.localizedDescription ?? "")
+                        }
+                    })
+                }
                 let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
                     self.notificationCenter.add(request, withCompletionHandler: {error in
                     if(error != nil){
