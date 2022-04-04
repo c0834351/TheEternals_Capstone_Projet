@@ -89,10 +89,6 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         })
         
         setPopupButton()
-        if(alarmToEdit != nil){
-            self.title = "Edit Reminder"
-            populateFields()
-        }
         
         defaultWeekdaysSVheight = weekdaysSVConstraint.constant
         defaultAudioOptionsSVheight = alarmToneHSHeightConstraint.constant
@@ -128,6 +124,10 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         endDate.minimumDate = Date()
         datesVStackview.layer.cornerRadius = 8
         recordingSession = AVAudioSession.sharedInstance()
+        if(alarmToEdit != nil){
+            self.title = "Edit Reminder"
+            populateFields()
+        }
     }
     
     
@@ -347,7 +347,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
             alarmToEdit.repeatflag = repeatFlag.isOn
             alarmToEdit.pictures = Set(alarmimages) as NSSet
             alarmToEdit.repeatdays = Set(repeatdays) as NSSet
-            if(repeatFlag.isOn){
+            if(alarmToEdit.repeatflag){
                 if(sundayButton.backgroundColor != .clear){
                     let day  = Repeatdays(context: self.context)
                     day.day = "Sunday"
