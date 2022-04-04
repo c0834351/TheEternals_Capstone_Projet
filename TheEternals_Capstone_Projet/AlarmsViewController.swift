@@ -42,6 +42,7 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [UIColor.systemBlue.cgColor, UIColor.systemGray3.cgColor]
@@ -112,6 +113,10 @@ class AlarmsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } catch {
             print("Error load items ... \(error.localizedDescription)")
         }
+        DispatchQueue.main.async{
+            self.allAlarmsTV.reloadData()
+        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

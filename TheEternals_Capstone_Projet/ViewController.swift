@@ -93,9 +93,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         getUpcomingAlarms()
     }
     
-    @objc func alarmCreated() {
-        todayAlarmsTV.reloadData()
-    }
+  
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

@@ -24,6 +24,7 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
         title = "History"
         // Do any additional setup after loading the view.
+    
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [UIColor.systemBlue.cgColor, UIColor.systemGray3.cgColor]
@@ -31,6 +32,7 @@ class HistoryViewController: UIViewController {
         view.layer.insertSublayer(gradientLayer, at: 0)
         
         setPopupButton()
+        gethistoryData()
     }
     
     func setPopupButton(){
