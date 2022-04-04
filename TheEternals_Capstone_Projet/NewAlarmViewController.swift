@@ -159,6 +159,39 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
     
     
     @IBAction func recordBtnClicked(_ sender: UIButton) {
+        if(alarmToEdit != nil){
+        if let file = alarmToEdit.audio, !file.isEmpty{
+            if (recordBtnLB.titleLabel?.text == "Record"){
+            let alert = UIAlertController(title: "Alert", message: "A recorded tone already exists for this alarm, Do you want to change it?", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { [self]action in
+                do {
+                    try self.recordingSession.setCategory(.playAndRecord, mode: .default)
+                    try self.recordingSession.setActive(true)
+                    self.recordingSession.requestRecordPermission() { [unowned self] allowed in
+                        DispatchQueue.main.async {
+                            if allowed {
+                                self.startRec()
+                            } else {
+                                self.showAlert(message: "Microphone permission denied")
+                            }
+                        }
+                    }
+                } catch {
+                    showAlert(message: "Recording failed")
+                }
+                
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+            else {
+                recorder?.stop()
+                recorder = nil
+                recordBtnLB.setTitle("Record", for: .normal)
+                recordBtnLB.setImage(UIImage(systemName: "mic.fill"), for: .normal)
+            }
+        }
+        } else {
         if (recordBtnLB.titleLabel?.text == "Record"){
         do {
             try recordingSession.setCategory(.playAndRecord, mode: .default)
@@ -177,11 +210,11 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         }
         }
         else {
-            print("recorder is nil")
             recorder?.stop()
             recorder = nil
             recordBtnLB.setTitle("Record", for: .normal)
             recordBtnLB.setImage(UIImage(systemName: "mic.fill"), for: .normal)
+        }
         }
     }
     
@@ -414,16 +447,33 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
         do {
             recorder = try AVAudioRecorder(url: audioURL, settings: settings)
             recorder.delegate = self
-            recorder.record()
+            recorder.record(forDuration: 30.0)
             recordBtnLB.setImage(UIImage(systemName: "mic.slash.fill"), for: .normal)
             recordBtnLB.setTitle("Stop", for: .normal)
             print("start recording")
         } catch {
             print("Error in recording \(error.localizedDescription)")
         }
+        if(alarmToEdit != nil){
+            alarmToEdit.audio = audioFileName
+        }
     }
     
+    
     func setupPlayer() {
+        if alarmToEdit != nil {
+        if let file = alarmToEdit.audio, !file.isEmpty{
+            let filename = getDocumentsDirectory().appendingPathComponent(alarmToEdit.audio ?? "")
+            do {
+                player = try AVAudioPlayer(contentsOf: filename)
+                player.delegate = self
+                player.prepareToPlay()
+                player.volume = 1.0
+            } catch {
+                print(error)
+            }
+        }
+        } else {
         let filename = getDocumentsDirectory().appendingPathComponent(audioFileName)
         do {
             player = try AVAudioPlayer(contentsOf: filename)
@@ -432,6 +482,7 @@ class NewAlarmViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRe
             player.volume = 1.0
         } catch {
             print(error)
+        }
         }
     }
     
